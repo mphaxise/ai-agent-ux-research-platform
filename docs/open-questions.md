@@ -21,6 +21,7 @@ Legend:
 | 10. Is this perceived as UX research, QA, or release infrastructure? | Category framing shapes conversion | Current market blurs these boundaries | Test three value props and see which one gets the strongest “I need this now” reaction | `Inference` | Medium-low |
 | 11. How differentiated can this remain if builder platforms add native checks? | Important for long-term defensibility | Unclear | Ask platforms what they would build themselves versus buy; ask non-platform teams what they would trust from a neutral layer | `Assumption` | Low |
 | 12. What is the right blend of synthetic users, heuristics, and human evidence? | Determines quality ceiling and operating model | No clear answer yet | Run one concierge-style comparison on the same app using all three methods and compare perceived usefulness | `Assumption` | Low |
+| 13. Should a docs/community layer be treated as a GTM asset? | Could improve discovery, credibility, interview recruiting, and category shaping without becoming the product itself | Early signal says the GitHub curation niche is open, but product value is still the main question | Track whether a docs-first hub attracts relevant contributors, interview leads, and warm intros from target buyers | `Inference` | Low |
 
 ## Unknowns Most Worth Killing First
 

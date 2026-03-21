@@ -88,6 +88,16 @@ These signals matter because they show how practitioners react once the pitch le
 | [Hacker News launch for Cekura](https://news.ycombinator.com/item?id=47232903) | Voice/chat agent teams are normalizing simulation because manual spot-checking does not scale across prompt, model, and tool changes | The simulation pattern is becoming culturally acceptable in adjacent agent markets, which lowers the conceptual barrier for web-app UX simulation | `Evidence-backed` | Medium |
 | [Hacker News launch for Hamming](https://news.ycombinator.com/item?id=41257369) | Automated voice-agent testing gained strong engagement around concrete KPIs like order accuracy under messy user behavior | Buyers respond better when the pitch is tied to a clear operational KPI than to a vague “better experience” promise | `Evidence-backed` | Medium |
 
+## Knowledge-Layer Whitespace
+
+This is not a product category in itself, but it matters because buyers, builders, and researchers still need a shared map of the space before a category feels legible.
+
+| Resource type | What exists | What appears missing | Why it matters | Basis |
+|---|---|---|---|---|
+| Human-AI interaction reading lists | Repos like [Awesome Human-AI Interaction](https://github.com/bwang514/awesome-HAI) and [Human-AI Collaboration Literature](https://github.com/janetyc/literature-human-ai-collaboration) curate papers and frameworks well | They are strong on academic grounding, but weak on market landscape, product workflows, and current agent-builder practice | There is usable theory, but not much market-facing synthesis for operators | `Evidence-backed` for repo existence; gap is `Inference` |
+| Agent ecosystem lists | Repos like [Awesome LLM-Powered Agent](https://github.com/hyp1231/awesome-llm-powered-agent) and [Awesome LLM Agents](https://github.com/kaushikb11/awesome-llm-agents) map frameworks, papers, and tools | They are broad on agent tooling, but not focused on UX, trust, handoff, or research workflows | The agent-builder audience has discovery surfaces, but not a clean UX-specific hub | `Evidence-backed` for repo existence; gap is `Inference` |
+| Docs-only curation for AI agent UX | No strong, active GitHub-native docs hub was found that specifically covers AI agent UX plus UX research for AI agents | A docs-first collection that bridges HAI, market tools, evaluation methods, and practitioner signals appears open | This is likely better understood as a distribution and category-shaping asset than as the primary product wedge | Repo search and manual review `Evidence-backed`; interpretation is `Inference` |
+
 ## Market Readout
 
 - `Evidence-backed | confidence: medium` There are already direct competitors proving that buyers will pay attention to synthetic user testing.
@@ -95,6 +105,7 @@ These signals matter because they show how practitioners react once the pitch le
 - `Inference | confidence: medium` Most current offerings still assume a human researcher or product manager is initiating and interpreting each study, even when the testing itself is synthetic.
 - `Inference | confidence: high` That creates room for an agent-first service contract such as: `here is the app, target user, task, and context; return structured UX findings, severity, evidence, and suggested fixes`.
 - `Inference | confidence: high` The messaging should likely avoid “replace user research” and lean toward `pre-ship validation`, `canary users`, `usability triage`, or `confidence checks`.
+- `Inference | confidence: medium` There is also a category-legibility gap: adjacent paper lists and agent lists exist, but there is still little shared curation specifically for agent UX and UX-research-for-agents.
 - `Assumption | confidence: low` The winning entry point may still be a service-plus-software wedge first, because early buyers may trust faster if outputs are quality-controlled by humans before the workflow becomes more autonomous.
 
 ## What This Changes Before Wedge Selection
@@ -106,6 +117,7 @@ These signals matter because they show how practitioners react once the pitch le
 - `Inference | confidence: medium` If we stay too close to researcher terminology, we may inherit skepticism from UX teams without winning their existing trust.
 - `Inference | confidence: medium` If we stay too close to QA terminology, we risk collapsing into a crowded browser-testing market.
 - `Assumption | confidence: low` The best positioning may be: `an app-quality research check your builder agent can call before shipping`, with optional human escalation when the synthetic signal is weak.
+- `Inference | confidence: medium` A docs-first community layer could be strategically useful for distribution, recruiting interviews, and shaping the category narrative, but it should be treated as a support asset rather than the main product.
 
 ## Source Notes
 
@@ -132,3 +144,7 @@ These signals matter because they show how practitioners react once the pitch le
 - [Hacker News launch for Propolis](https://news.ycombinator.com/item?id=45762012)
 - [Hacker News launch for Cekura](https://news.ycombinator.com/item?id=47232903)
 - [Hacker News launch for Hamming](https://news.ycombinator.com/item?id=41257369)
+- [Awesome Human-AI Interaction](https://github.com/bwang514/awesome-HAI)
+- [Human-AI Collaboration Literature](https://github.com/janetyc/literature-human-ai-collaboration)
+- [Awesome LLM-Powered Agent](https://github.com/hyp1231/awesome-llm-powered-agent)
+- [Awesome LLM Agents](https://github.com/kaushikb11/awesome-llm-agents)
