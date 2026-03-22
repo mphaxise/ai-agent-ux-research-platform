@@ -1,6 +1,6 @@
 # Open Questions
 
-These are the highest-value unknowns for the current thesis: a UX research service that app-building agents can call.
+These are the highest-value unknowns for the current divergence thesis: a UX research service for app-building agents plus an alternate `agent UX observability` wedge for open flow-based personal agents.
 
 Legend:
 - `Evidence-backed`: already grounded in external evidence.
@@ -22,6 +22,7 @@ Legend:
 | 11. How differentiated can this remain if builder platforms add native checks? | Important for long-term defensibility | Unclear | Ask platforms what they would build themselves versus buy; ask non-platform teams what they would trust from a neutral layer | `Assumption` | Low |
 | 12. What is the right blend of synthetic users, heuristics, and human evidence? | Determines quality ceiling and operating model | No clear answer yet | Run one concierge-style comparison on the same app using all three methods and compare perceived usefulness | `Assumption` | Low |
 | 13. Should a docs/community layer be treated as a GTM asset? | Could improve discovery, credibility, interview recruiting, and category shaping without becoming the product itself | Early signal says the GitHub curation niche is open, but product value is still the main question | Track whether a docs-first hub attracts relevant contributors, interview leads, and warm intros from target buyers | `Inference` | Low |
+| 14. Is the stronger first wedge around generated-app workflows or agent UX observability for open flow-based personal agents? | This changes the product surface, data model, ICP, and GTM motion | Both appear plausible; the personal-agent observability wedge now has stronger research scaffolding than before | Interview both app-builder teams and open personal-agent teams using matched concept briefs and force a tradeoff on urgency and budget | `Inference` | Low |
 
 ## Unknowns Most Worth Killing First
 

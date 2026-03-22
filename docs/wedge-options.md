@@ -1,6 +1,6 @@
 # Wedge Options
 
-Framing: the product thesis here is a UX research service that app-building agents can call before or after shipping. The wedge should be narrow enough to validate in one week, but strong enough to point toward a defensible category.
+Framing: the core thesis here is a UX research service that app-building agents can call before or after shipping, while still tracking an alternate `agent UX observability` branch for open flow-based personal agents. The wedge should be narrow enough to validate in one week, but strong enough to point toward a defensible category.
 
 Legend:
 - `Evidence-backed`: grounded in cited market signals.
@@ -35,6 +35,7 @@ Calculation used here:
 | 4. Post-ship feedback-to-fix service | 4 | 4 | 4 | 3 | 4 | 77 | `Inference` | Medium |
 | 5. Research memory layer for builders | 3 | 3 | 3 | 4 | 4 | 66 | `Assumption` heavy | Low |
 | 6. Public UX benchmark / certification for AI-generated apps | 2 | 2 | 2 | 4 | 4 | 52 | `Assumption` heavy | Low |
+| 7. Agent UX observability for open flow-based personal agents | 4 | 4 | 4 | 4 | 3 | 77 | Mix of conversational-agent research `Evidence-backed` and wedge synthesis `Inference` | Medium-low |
 
 ## Wedge Readout
 
@@ -105,6 +106,17 @@ Calculation used here:
 - Defensibility thesis: benchmark brand and standard-setting.
 - Key risk: too far from urgent workflow pain.
 
+### 7. Agent UX observability for open flow-based personal agents
+
+- User: teams building open flow-based personal agents.
+- Painful moment: users are interacting with personal agents that combine conversation and flow execution, but teams cannot see where trust drops, where users get annoyed, or which breakdowns matter most.
+- Value proposition: analyze transcripts, flow traces, tool events, and lightweight user feedback to identify critical incidents, recurring issue clusters, and fix directions.
+- Differentiator: combines conversation telemetry, flow-state analysis, and UX-oriented rubrics rather than generic analytics or raw chat logs.
+- Expected willingness to pay: `Inference` says medium to medium-high if the agent itself is the product and user retention or trust is on the line.
+- Business potential: Strong if open personal-agent systems become an important category, but less directly tied to app-builder workflows.
+- Defensibility thesis: cross-session incident taxonomy, proprietary rubrics, and accumulated conversation-plus-flow failure patterns across many agents.
+- Key risk: privacy, compliance, and data-access concerns may slow adoption; many teams may also treat this as internal analytics first.
+
 ## Recommendation
 
 ### Lead wedge
@@ -123,12 +135,15 @@ Why this lead wedge:
    Why keep it alive: if buyers do not want a broad API but do want a shipping decision, this is the cleanest simplification.
 2. `Human escalation brokerage for hard UX questions`
    Why keep it alive: if synthetic-only trust is weak, a hybrid service may be the fastest path to credibility.
+3. `Agent UX observability for open flow-based personal agents`
+   Why keep it alive: if the strongest buyer pain sits in personal-agent interaction breakdowns rather than generated-app validation, this could become the better wedge.
 
 ## Why Now
 
 - `Evidence-backed | confidence: high` Tools like Replit Agent, v0, and Lovable are pushing app creation speed up dramatically.
 - `Evidence-backed | confidence: medium` Synthetic testing entrants like Uxia, Crowdi, and Loop11 AI Browser Agents show growing willingness to let AI participate in usability evaluation.
 - `Evidence-backed | confidence: medium` Browser infrastructure and agentic test execution layers like Browserbase, Stagehand, and Zencoder make automated interaction technically feasible.
+- `Evidence-backed | confidence: medium` Conversational-agent research has matured enough to provide practical dimensions for analyzing satisfaction, frustration, trust, and repair in agent interactions.
 - `Inference | confidence: high` The result is a timing window where app creation is getting automated faster than experience validation.
 
 ## Why This Team
@@ -146,6 +161,7 @@ If any of these happen in the next 7 days, the lead wedge should be reconsidered
 3. Teams want only post-launch analytics, not pre-launch validation.
 4. The preferred output is a human narrative report, not an agent-readable response.
 5. Security objections block teams from giving a service access to staging apps or generated builds.
+6. Teams building open flow-based personal agents express substantially stronger pain around agent UX observability than app-builder teams express around workflow validation.
 
 ## Risks And Failure Modes
 
