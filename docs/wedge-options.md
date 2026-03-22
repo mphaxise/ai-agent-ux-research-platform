@@ -43,6 +43,7 @@ Calculation used here:
 - User: app-building agent plus the human team operating it.
 - Painful moment: the agent can generate an app fast, but nobody knows whether a target user can actually complete the intended job confidently.
 - Value proposition: send the app URL, audience, mission, and context; receive structured findings, evidence, severity, and suggested fixes.
+- Most credible first instantiation: a `workflow validation loop` that combines automated browser QA baseline checks, a small number of human or synthetic task runs, and post-task ratings before handing a structured diagnosis back to the builder agent.
 - Differentiator: API-first and agent-consumable, rather than a human-only dashboard or one-off study.
 - Expected willingness to pay: `Inference` says medium-high to high, because this can sit on the critical path of app quality and trust. Plausible starting range: startup tooling budget or platform add-on budget rather than enterprise research budget.
 - Business potential: High. Expansion path could include recurring validation, regression history, and human escalation.
