@@ -13,6 +13,7 @@ Legend:
 - `Inference | confidence: high` The most credible first product is not a broad research suite. It is a `workflow completion plus post-task feedback loop` for specific user journeys.
 - `Assumption | confidence: medium-low` In many early-stage cases, `3-5` strong workflow runs with both telemetry and post-task feedback will be enough to produce useful diagnosis, even if they are not enough for statistical certainty.
 - `Inference | confidence: high` The key handoff is not just raw recordings. It is a structured package that the AI agent can act on: what failed, where, why it likely failed, and what to change next.
+- `Evidence-backed | confidence: high` As of May 26, 2026, native builder platforms already provide more browser testing, logs, monitoring, feedback, and security checks. The workflow-validation thesis must therefore emphasize neutral UX diagnosis and fix synthesis rather than browser execution alone.
 
 ## High-Level System Diagram
 
@@ -166,3 +167,10 @@ The return object should likely include both machine-readable and human-readable
   1. a request surface for the agent or operator,
   2. a hosted task page for testers,
   3. a results packet returned to the builder.
+
+## May 26, 2026 Update
+
+- `Evidence-backed | confidence: high` Lovable now documents browser testing, frontend tests, edge function verification, console/network inspection, screenshots, and screen-size checks.
+- `Evidence-backed | confidence: high` Replit now documents Agent Inbox feedback, App Monitoring, Security Agent, Workspace Security Center, and Agent-assisted remediation loops.
+- `Evidence-backed | confidence: medium` v0 now exposes more deployment, logs, analytics, environment, terminal, and project-instruction surfaces.
+- `Inference | confidence: high` The product should not compete by being the browser runner. It should compete by producing a better UX diagnosis packet than native builder tools, raw logs, or pass/fail verifiers.

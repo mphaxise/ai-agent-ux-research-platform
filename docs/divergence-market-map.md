@@ -11,9 +11,12 @@ Legend:
 
 - `Evidence-backed | confidence: high` AI app-building supply is now real and growing. Replit Agent, v0, and Lovable all market AI systems that can create working apps or websites quickly, which increases the need for fast validation before launch.
 - `Evidence-backed | confidence: medium` A direct category around synthetic or AI-led usability testing is emerging. Uxia, Crowdi, Loop11 AI Browser Agents, and RUXAILAB each pitch some version of AI-powered or synthetic user evaluation.
-- `Inference | confidence: medium` The market is still organized around human-first dashboards and researcher workflows, not an API or service layer that autonomous app-building agents can call directly during a build loop.
-- `Inference | confidence: medium` The whitespace is not generic analytics. It is structured research orchestration: define audience, run the right validation mode, synthesize findings, and hand results back in an agent-readable format.
+- `Evidence-backed | confidence: high` Since the first pass, builder platforms have absorbed more native testing, feedback, monitoring, security, and deployment validation. Lovable now documents browser testing and verification tools; Replit added Agent Inbox, App Monitoring, Security Agent, and Workspace Security Center; v0 has expanded project, deployment, terminal, analytics, and environment surfaces.
+- `Evidence-backed | confidence: high` Browser-agent evaluation has moved up-stack. Browserbase Evaluations and Universal Verifier show that browser execution plus success verification is becoming infrastructure, not a sufficient standalone moat.
+- `Inference | confidence: high` The whitespace is not generic analytics or browser testing. It is structured UX diagnosis: define audience, run the right validation mode, synthesize evidence, calibrate confidence, and hand results back in an agent-readable format.
 - `Assumption | confidence: low` The most valuable long-term moat is not the test runner alone; it is the corpus of request context, issue taxonomy, fix recommendations, and agent-feedback loops gathered across many builds.
+
+See also: [Market Options As Of May 26, 2026](./market-options-may-2026.md).
 
 ## Direct Competitors
 
@@ -23,6 +26,7 @@ Legend:
 | [Crowdi](https://www.crowdi.org/) | Modern product teams wanting continuous synthetic testing | Upload product or staging build, run large-scale AI user simulations, inspect issues and insights | Clear “thousands of AI users” positioning; finds bugs and UX friction before launch; continuous simulation language | Leans closer to synthetic QA/simulation than reusable research-as-a-service API; unclear human-grounding and workflow for agent remediation | Product claims `Evidence-backed`; blind spots `Inference` |
 | [Loop11 AI Browser Agents](https://www.loop11.com/) | UX teams already running usability studies | Choose AI Browser Agents as participants, define tasks, compare AI and human usability outcomes | Strong bridge from human usability testing to AI participants; benchmark AI against humans; mature research workflow | Still optimized for human project owners; likely slower and less programmable than app-building agents need | Product claims `Evidence-backed`; blind spots `Inference` |
 | [RUXAILAB](https://ruxailab.com/) | Researchers, developers, and academic/open-source communities | Run remote UX evaluation using AI-enabled methods such as eye tracking, sentiment analysis, transcription, and other multimodal methods | Research depth; multimodal methods; open-source posture | More lab/platform oriented than embedded service layer; likely too heavy for fast build loops unless productized further | Product claims `Evidence-backed`; blind spots `Inference` |
+| [Jina Synthetic Users](https://synthetic.usejina.com/) | AI-first teams wanting quick synthetic app exploration | Let agents explore an app and generate an exploration or feedback report | Clear agent-exploration framing; lightweight and close to the AI-first buyer mental model | Early product surface; likely weaker on human grounding, longitudinal evidence, and fix-loop integration | Product claims `Evidence-backed`; blind spots `Inference` |
 
 ## Substitutes
 
@@ -30,6 +34,7 @@ Legend:
 |---|---|---|---|---|---|
 | [UserTesting](https://www.usertesting.com/platform/enjoyhq) | Enterprises that want human insight across concepts, products, and experiences | Recruit participants, run tests or surveys, capture video/feedback, synthesize findings | Strong trust from real humans; end-to-end research workflow; large enterprise acceptance | Slower, human-coordination-heavy, and not designed as an agent-consumable service layer | Product claims `Evidence-backed`; blind spots `Inference` |
 | [UXArmy](https://uxarmy.com/) | UX teams doing remote research across websites, apps, and prototypes | Run moderated or unmoderated tests, interviews, card sorting, surveys, collect recordings | Broad method coverage; practical usability workflow; works across websites, apps, and prototypes | Traditional research workflow, not autonomous or agent-first; unlikely to fit directly into app-generation loops | Product claims `Evidence-backed`; blind spots `Inference` |
+| [Maze](https://maze.co/resources/user-research-report/) / [Sprig](https://sprig.com/ux-researcher-tools) / [Userlytics](https://www.userlytics.com/resources/news/userlytics-delivers-major-platform-releases-in-early-2026-advancing-ai-driven-ux-research/) | Product, design, and research teams scaling human insight with AI assistance | Run research or feedback programs, then use AI to summarize, theme, annotate, or analyze findings | Stronger human evidence and increasingly mature AI analysis workflows | Still human-dashboard-first; not optimized for app-building agents requesting and consuming validation in a loop | Product claims `Evidence-backed`; blind spots `Inference` |
 | Human heuristic review + freelance research | Founders, agencies, or small teams without tooling | Have a designer, researcher, or consultant inspect flows manually and write recommendations | High-quality judgment when the reviewer is strong; flexible | Expensive, inconsistent, slow, hard to operationalize for every agent-generated build | `Inference` |
 | Manual prompting of frontier models with screenshots | Builders improvising with existing LLMs | Feed screenshots, URLs, or flow descriptions into ChatGPT or Claude and ask for critique | Cheap and immediate; no procurement | Low reproducibility, weak audit trail, no benchmark history, and no structured fix loop | `Inference` |
 
@@ -38,6 +43,7 @@ Legend:
 | Company | Who it serves | Core workflow | Strengths | Blind spots relative to this thesis | Basis |
 |---|---|---|---|---|---|
 | [Browserbase](https://www.browserbase.com/) / [Stagehand](https://www.stagehand.dev/) | Teams building browser agents and web automation | Provide cloud browsers and AI-native browser automation primitives | Strong browser execution layer; built for LLM workflows; session replay and prompt observability on the infra side | Executes tasks but does not decide what research to run, how to model users, or how to synthesize UX findings for builders | Product claims `Evidence-backed`; blind spots `Inference` |
+| [Browserbase Evaluations](https://www.browserbase.com/evaluations) / [Universal Verifier](https://www.browserbase.com/blog/building-verifiers-for-computer-use-agents) | Teams evaluating computer-use and browser agents | Run browser trajectories and verify whether the agent actually achieved the task | Strong verifier and benchmark direction; shows execution success is becoming auditable infrastructure | Optimized for agent task success, not human user experience, trust, confusion, or product judgment | Product claims and paper `Evidence-backed`; blind spots `Inference` |
 | [Zencoder E2E Testing Agent](https://docs.zencoder.ai/features/e2e-testing) | Developers wanting agentic test creation and execution | Use an E2E testing agent that leverages Playwright to simulate browser actions and verify behavior | Strong automated browser action coverage; slots into dev workflows | Focused on functional correctness, not nuanced UX research or persona-based validation | Product claims `Evidence-backed`; blind spots `Inference` |
 | [QA Wolf](https://www.qawolf.com/platform) | Engineering teams buying end-to-end coverage | Map the app, generate Playwright/Appium tests, maintain and run them as a hybrid platform/service | Strong enterprise QA story; explainable decisions; high coverage | Primarily QA coverage, not UX insight generation or agent-consumable research synthesis | Product claims `Evidence-backed`; blind spots `Inference` |
 | [LogRocket](https://logrocket.com/) / [Fullstory](https://www.fullstory.com/) | Product and engineering teams analyzing real-user sessions | Capture session replay, analytics, issues, and behavior signals after launch | Great post-launch evidence; shows where users struggle; mature buyer budget | Reactive rather than pre-ship; aimed at human analysts; weak fit for agent-in-the-loop research before deployment | Product claims `Evidence-backed`; blind spots `Inference` |
@@ -59,6 +65,17 @@ These are not competitors; they are evidence that AI-generated app production is
 | [Replit Agent](https://replit.com/ai) | Markets an AI system that can build and deploy apps from natural language, which increases the volume of low-friction app generation needing validation | `Evidence-backed` |
 | [v0](https://v0.dev/) | Explicitly markets generating working applications and publishing live websites in minutes | `Evidence-backed` |
 | [Lovable](https://lovable.dev/) | Positions itself as an AI app builder for creating apps and websites by chatting with AI | `Evidence-backed` |
+
+## May 26, 2026 Market Refresh
+
+| Market movement | New evidence | What it changes | Basis | Confidence |
+|---|---|---|---|---|
+| Builder-native testing is becoming normal | Lovable documents browser testing, frontend tests, edge function verification, screenshots, logs, network requests, and screen-size checks | Our wedge must sit above native QA and explain UX failures, not just run the browser | `Evidence-backed` | High |
+| Builder platforms are adding feedback and monitoring loops | Replit Agent Inbox lets published-app visitors leave feedback that Agent can implement; Replit App Monitoring can investigate downtime with Agent; Workspace Security Center adds remediation loops | Platform absorption risk is higher, but buyers are also being trained to expect agent-assisted remediation loops | `Evidence-backed` | High |
+| Browser-agent verification is maturing | Browserbase Evaluations and Universal Verifier focus on reliable task-success verification; WebTestBench and OpenComputer add research momentum | "Can the agent complete the task?" is becoming infrastructure. "Was the experience usable, trustworthy, and fixable?" remains more open | `Evidence-backed` | High |
+| Human research platforms are AI-augmenting, not disappearing | UserTesting, Maze, Sprig, and Userlytics all emphasize AI-assisted analysis, summaries, annotations, or research-grade AI | Mature buyers still value human evidence, but expect faster synthesis | `Evidence-backed` | High |
+| Synthetic users remain contested | Uxia/Crowdi/Loop11/Jina show supply; r/UXResearch discussion and papers on synthetic-user realism gaps show continued skepticism | Hybrid positioning is safer than "synthetic replaces users" | `Evidence-backed` | Medium |
+| Security and safe publishing became part of the quality conversation | Axios reported exposed vibe-coding apps; Replit emphasized Security Agent and private publishing updates | UX validation should include trust, privacy, and safe-release signals without becoming a full security product | `Evidence-backed` | High |
 
 ## Manual Page Review Highlights
 
@@ -116,7 +133,7 @@ This is not a product category in itself, but it matters because buyers, builder
 - `Inference | confidence: high` The strongest near-term buyer story may live closer to QA, release confidence, and rollback avoidance than to classic UX research language.
 - `Inference | confidence: medium` If we stay too close to researcher terminology, we may inherit skepticism from UX teams without winning their existing trust.
 - `Inference | confidence: medium` If we stay too close to QA terminology, we risk collapsing into a crowded browser-testing market.
-- `Assumption | confidence: low` The best positioning may be: `an app-quality research check your builder agent can call before shipping`, with optional human escalation when the synthetic signal is weak.
+- `Inference | confidence: high` As of May 26, 2026, the best positioning is closer to: `a neutral UX diagnosis layer your builder agent can call before shipping`, with optional human verification when the synthetic signal is weak.
 - `Inference | confidence: medium` A docs-first community layer could be strategically useful for distribution, recruiting interviews, and shaping the category narrative, but it should be treated as a support asset rather than the main product.
 
 ## Source Notes
@@ -124,19 +141,36 @@ This is not a product category in itself, but it matters because buyers, builder
 - [Uxia product page](https://www.uxia.app/)
 - [Crowdi product page](https://www.crowdi.org/)
 - [Loop11 AI Browser Agents page](https://www.loop11.com/)
+- [Jina Synthetic Users](https://synthetic.usejina.com/)
 - [RUXAILAB home page](https://ruxailab.com/)
 - [UserTesting Human Insight Platform](https://www.usertesting.com/platform/enjoyhq)
+- [UserTesting and Artificial Intelligence](https://help.usertesting.com/hc/en-us/articles/13268801005469-UserTesting-and-Artificial-Intelligence)
+- [Maze Future of User Research 2026](https://maze.co/resources/user-research-report/)
+- [Sprig UX researcher tools](https://sprig.com/ux-researcher-tools)
+- [Userlytics April 2026 AI releases](https://www.userlytics.com/resources/news/userlytics-delivers-major-platform-releases-in-early-2026-advancing-ai-driven-ux-research/)
 - [UXArmy product page](https://uxarmy.com/)
 - [Browserbase home page](https://www.browserbase.com/)
+- [Browserbase Evaluations](https://www.browserbase.com/evaluations)
+- [Browserbase Universal Verifier](https://www.browserbase.com/blog/building-verifiers-for-computer-use-agents)
 - [Stagehand home page](https://www.stagehand.dev/)
 - [Zencoder E2E Testing Agent docs](https://docs.zencoder.ai/features/e2e-testing)
 - [QA Wolf platform page](https://www.qawolf.com/platform)
 - [LogRocket home page](https://logrocket.com/)
 - [Fullstory home page](https://www.fullstory.com/)
 - [Replit Agent page](https://replit.com/ai)
+- [Replit Agent Inbox](https://docs.replit.com/updates/2026/02/06/changelog)
+- [Replit Security Agent](https://docs.replit.com/updates/2026/04/24/changelog)
+- [Replit App Monitoring](https://docs.replit.com/updates/2026/05/01/changelog)
+- [Replit Workspace Security Center 2.0](https://docs.replit.com/updates/2026/05/08/changelog)
 - [v0 app builder page](https://v0.dev/)
+- [v0 changelog](https://v0.dev/changelog)
+- [v0 deployments docs](https://v0.dev/docs/deployments)
 - [Lovable app builder page](https://lovable.dev/)
+- [Lovable testing docs](https://docs.lovable.dev/features/testing)
+- [Lovable browser testing docs](https://docs.lovable.dev/features/browser-testing)
+- [Axios on exposed vibe-coding apps](https://www.axios.com/2026/05/07/loveable-replit-vibe-coding-privacy)
 - [Reddit maker launch for Uxia](https://www.reddit.com/r/ProductHunters/comments/1mbqmx5)
+- [r/UXResearch thread on AI-driven usability testing](https://www.reddit.com/r/UXResearch/comments/1tcxy0y/are_there_any_ai_driven_usability_testing_tools/)
 - [r/SaaS discussion on simulated user behavior](https://www.reddit.com/r/SaaS/comments/1ijkxfi)
 - [r/UXResearch thread on user proxies](https://www.reddit.com/r/UXResearch/comments/1c0oq4n)
 - [r/research thread on synthetic audiences](https://www.reddit.com/r/research/comments/1monzzm)

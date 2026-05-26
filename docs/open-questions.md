@@ -23,6 +23,9 @@ Legend:
 | 12. What is the right blend of synthetic users, heuristics, and human evidence? | Determines quality ceiling and operating model | No clear answer yet | Run one concierge-style comparison on the same app using all three methods and compare perceived usefulness | `Assumption` | Low |
 | 13. Should a docs/community layer be treated as a GTM asset? | Could improve discovery, credibility, interview recruiting, and category shaping without becoming the product itself | Early signal says the GitHub curation niche is open, but product value is still the main question | Track whether a docs-first hub attracts relevant contributors, interview leads, and warm intros from target buyers | `Inference` | Low |
 | 14. Is the stronger first wedge around generated-app workflows or agent UX observability for open flow-based personal agents? | This changes the product surface, data model, ICP, and GTM motion | Both appear plausible; the personal-agent observability wedge now has stronger research scaffolding than before | Interview both app-builder teams and open personal-agent teams using matched concept briefs and force a tradeoff on urgency and budget | `Inference` | Low |
+| 15. What remains valuable if builder platforms ship native testing, monitoring, feedback widgets, and security checks? | Platform absorption risk is now evidence-backed rather than theoretical | Native features are expanding quickly in Replit, Lovable, and v0 | Compare our concept directly against native platform features and ask what buyers would still pay an independent layer to do | `Evidence-backed` + `Inference` | Medium |
+| 16. Is the moat diagnosis and repair rather than testing itself? | Browser execution and task verification are becoming infrastructure | Browserbase Evaluations, Universal Verifier, WebTestBench, and OpenComputer strengthen the verification layer | Show buyers a raw test trace, a pass/fail verifier, and a UX diagnosis packet; ask which one changes what they would fix | `Inference` | Medium |
+| 17. Should we optimize for human usability, AI-agent usability, or both? | AI-first apps increasingly need to be usable by humans and by agents/computer-use systems | Browser-agent verification and AI app-builder workflows are converging | Test separate concept briefs: human usability validation, agent usability verification, and combined experience validation | `Inference` | Low |
 
 ## Unknowns Most Worth Killing First
 
@@ -32,6 +35,7 @@ These are the fastest make-or-break questions:
 2. `Buyer`: who feels the pain sharply enough to buy now?
 3. `Workflow`: should this be an API, gate, or concierge packet?
 4. `Access`: can customers safely expose enough of the app for the service to work?
+5. `Absorption`: what must remain independent when native builder platforms add testing and monitoring?
 
 ## What Would Count As Strong Learning
 

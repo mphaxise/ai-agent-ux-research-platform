@@ -2,7 +2,7 @@
 
 Goal: falsify or strengthen the lead wedge in 5 working days.
 
-Lead wedge under test: `task-based synthetic UX test API for app-building agents`
+Lead wedge under test: `neutral UX validation and diagnosis layer for app-building agents`
 
 Backups still tracked:
 
@@ -18,13 +18,15 @@ Backups still tracked:
 
 ## Interview Targets
 
-Aim for `10-12` conversations in one week:
+Aim for `12-15` conversations in one week:
 
 1. `3` AI PMs or engineering leads at app-builder or coding-agent companies.
 2. `3` founders, CTOs, or product leads at AI-native startups shipping customer-facing apps with AI-heavy build workflows.
 3. `2` QA or test automation leads using Playwright, QA Wolf, Browserbase, or similar tooling.
 4. `2` design or UX leads who currently have to approve AI-generated prototypes or apps.
 5. `2` enterprise internal platform or automation leads as stretch interviews.
+6. `2` builders actively using Replit, Lovable, v0, Bolt, or Base44 native testing/monitoring features.
+7. `1-2` teams experimenting with Browserbase Evaluations, browser-agent verifiers, or computer-use agent benchmarks.
 
 ## Test Artifacts To Produce
 
@@ -35,6 +37,7 @@ Create these before or during the sprint:
 3. A mocked request/response contract showing what an app-building agent sends and receives.
 4. Two concierge-style sample reports generated on real or realistic staging apps.
 5. A simple comparison sheet: synthetic-only vs hybrid human escalation.
+6. A competitive comparison against native builder testing, browser-agent evals, and human research platforms.
 
 ## 5-Day Plan
 

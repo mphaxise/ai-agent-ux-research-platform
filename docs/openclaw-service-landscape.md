@@ -13,6 +13,8 @@ Legend:
 - `Evidence-backed | confidence: high` OpenClaw already emits the core data needed for UX-oriented incident analysis: session transcripts, message events, tool hooks, session lifecycle hooks, and persisted tool results.
 - `Evidence-backed | confidence: medium` Third-party extensions already treat OpenClaw as infrastructure rather than as a closed product. The closest examples are memory plugins, telemetry bridges, workflow plugins, and ops monitors.
 - `Evidence-backed | confidence: medium` The community plugin ecosystem still looks early. The official community-plugin page is small, and the known examples are infra- or memory-oriented rather than UX-analysis-oriented.
+- `Evidence-backed | confidence: high` April-May 2026 releases strengthen the service thesis. Active Memory, Plugin SDK docs, and external plugin installation make OpenClaw more extensible and more operator-facing than it was in March.
+- `Evidence-backed | confidence: high` The same releases and new security papers also raise the trust bar: plugins, persistent memory, external services, and tool invocation are now central risk surfaces.
 - `Inference | confidence: high` That creates whitespace for an `agent UX observability` service aimed at teams and companies running OpenClaw-based personal agents.
 
 ## What OpenClaw Exposes Today
@@ -25,6 +27,8 @@ Legend:
 | Session transcripts | Session transcripts are stored as JSONL at `~/.openclaw/agents/<agentId>/sessions/<SessionId>.jsonl` | Structured replay and backtracing are feasible without inventing a new storage layer first | `Evidence-backed` |
 | Gateway as source of truth | Official session docs say the Gateway owns state and remote mode uses the gateway host as the state source of truth | A service aimed at companies can integrate at the gateway layer rather than at every UI client | `Evidence-backed` |
 | VPS and hosted deployment guides | OpenClaw documents supported VPS/cloud deployments and durable gateway-state patterns | This suggests companies can run OpenClaw as persistent infrastructure, not only as a local hobby install | `Evidence-backed` |
+| Plugin SDK and external installation | OpenClaw now documents a typed Plugin SDK and v2026.5.2 externalized plugin installation, update, doctor repair, dependency reporting, and artifact metadata | Distribution and operator setup for a UX observability plugin look more credible than in the first pass | `Evidence-backed` |
+| Active Memory | OpenClaw v2026.4.12 introduced an optional Active Memory plugin with context modes and transcript persistence options | UX observability can correlate incidents with memory, preferences, and past-session context, but must handle privacy carefully | `Evidence-backed` |
 
 ## Adjacent Extension Patterns Already In The Ecosystem
 
@@ -141,6 +145,8 @@ The representation layer matters because the output must be fixable by a company
 | Privacy and consent | Conversation logs can contain sensitive personal or company data | Redaction, scoped retention, and explicit deployment models are not optional |
 | Data availability varies | Some teams may not have clean flow-state traces or rich tool metadata | The first version should degrade gracefully to transcript-plus-tool hooks |
 | Category education | Buyers may not yet think in terms of "agent UX observability" | Positioning will need concrete before/after incident examples |
+| Plugin ecosystem churn | May 2026 community reports and release notes suggest plugin requirements and dependency handling are changing quickly | Early integrations should pin supported OpenClaw versions and include compatibility checks |
+| Agent runtime security | New 2026 papers focus on security, privacy, ethical risk, and trajectory safety in OpenClaw-like runtimes | The service must be legible as safe observability, not another risky plugin |
 
 ## Fast Falsifiers
 
@@ -159,12 +165,19 @@ If these show up quickly, this wedge should be deprioritized:
 ## Source Notes
 
 - [OpenClaw Plugins docs](https://docs.openclaw.ai/plugins)
+- [OpenClaw Plugin SDK overview](https://docs.openclaw.ai/plugins/sdk-overview)
+- [OpenClaw Active Memory docs](https://docs.openclaw.ai/concepts/active-memory)
 - [OpenClaw Agent Loop docs](https://docs.openclaw.ai/concepts/agent-loop)
 - [OpenClaw Session Management docs](https://docs.openclaw.ai/sessions)
+- [OpenClaw Session Tools docs](https://docs.openclaw.ai/concepts/session-tool)
 - [OpenClaw VPS Hosting docs](https://docs.openclaw.ai/vps)
 - [OpenClaw Hetzner deployment docs](https://docs.openclaw.ai/install/hetzner)
 - [OpenClaw OpenProse docs](https://docs.openclaw.ai/prose)
 - [OpenClaw community plugins page](https://docs.openclaw.ai/plugins/community)
+- [OpenClaw v2026.4.12 release notes](https://openclawlaunch.com/news/openclaw-v2026-4-12-active-memory-codex-lm-studio-exec-policy)
+- [OpenClaw v2026.5.2 release notes](https://openclawlaunch.com/news/openclaw-v2026-5-2-plugin-externalization-grok-4-3)
+- [Security, Privacy, and Ethical Risks in OpenClaw](https://arxiv.org/abs/2605.23330)
+- [Security of OpenClaw Agents: Fundamentals, Attacks, and Countermeasures](https://arxiv.org/abs/2605.25435)
 - [Supermemory OpenClaw plugin](https://github.com/supermemoryai/clawdbot-supermemory)
 - [Honeycomb Telemetry Skill gist](https://gist.github.com/mrkshields/daa44b7db137f5c67d44d9600763b6d0)
 - [Memory Guardian gist](https://gist.github.com/joe-rlo/3c3193285804b05c99bbfe541ed53c4d)

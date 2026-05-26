@@ -29,7 +29,7 @@ Calculation used here:
 
 | Wedge | Pain (30%) | Urgency (20%) | WTP (20%) | Diff. (15%) | GTM (15%) | Total / 100 | Basis | Confidence |
 |---|---:|---:|---:|---:|---:|---:|---|---|
-| 1. Task-based synthetic UX test API for app-building agents | 5 | 5 | 4 | 4 | 4 | 90 | Mostly `Inference`, supported by app-builder and synthetic-testing market evidence | Medium |
+| 1. Neutral UX validation and diagnosis layer for app-building agents | 5 | 5 | 4 | 4 | 4 | 90 | Mostly `Inference`, supported by app-builder, synthetic-testing, native-testing, and browser-eval market evidence | Medium |
 | 2. Pre-deploy UX gate for AI app builders | 4 | 4 | 4 | 4 | 4 | 80 | `Inference` | Medium |
 | 3. Human escalation brokerage for hard UX questions | 4 | 3 | 5 | 5 | 3 | 80 | `Inference` | Medium-low |
 | 4. Post-ship feedback-to-fix service | 4 | 4 | 4 | 3 | 4 | 77 | `Inference` | Medium |
@@ -39,13 +39,13 @@ Calculation used here:
 
 ## Wedge Readout
 
-### 1. Task-based synthetic UX test API for app-building agents
+### 1. Neutral UX validation and diagnosis layer for app-building agents
 
 - User: app-building agent plus the human team operating it.
 - Painful moment: the agent can generate an app fast, but nobody knows whether a target user can actually complete the intended job confidently.
-- Value proposition: send the app URL, audience, mission, and context; receive structured findings, evidence, severity, and suggested fixes.
+- Value proposition: send the app URL, audience, mission, and context; receive structured UX findings, evidence, severity, confidence, and suggested fixes that can be handed back to the agent.
 - Most credible first instantiation: a `workflow validation loop` that combines automated browser QA baseline checks, a small number of human or synthetic task runs, and post-task ratings before handing a structured diagnosis back to the builder agent.
-- Differentiator: API-first and agent-consumable, rather than a human-only dashboard or one-off study.
+- Differentiator: cross-platform and diagnosis-first. Native builder tools can run tests and inspect logs, but this wedge explains the user-facing issue, confidence level, and likely fix path in an agent-consumable format.
 - Expected willingness to pay: `Inference` says medium-high to high, because this can sit on the critical path of app quality and trust. Plausible starting range: startup tooling budget or platform add-on budget rather than enterprise research budget.
 - Business potential: High. Expansion path could include recurring validation, regression history, and human escalation.
 - Defensibility thesis: proprietary corpus of app contexts, personas, issue patterns, fix suggestions, and acceptance behavior from agents and humans.
@@ -121,13 +121,13 @@ Calculation used here:
 
 ### Lead wedge
 
-`Task-based synthetic UX test API for app-building agents`
+`Neutral UX validation and diagnosis layer for app-building agents`
 
 Why this lead wedge:
 
-- `Evidence-backed | confidence: medium` Both sides of the market now exist: app-building agents are real, and synthetic UX testing tools are real.
+- `Evidence-backed | confidence: high` The market now has all adjacent ingredients: app-building agents, synthetic testing, native builder testing, human research platforms with AI analysis, and browser-agent evaluation infrastructure.
 - `Inference | confidence: high` What is still missing is an agent-first service contract that turns UX validation into something callable, repeatable, and actionable inside the generation loop.
-- `Inference | confidence: medium` This wedge is narrow enough to test quickly, yet broad enough to expand into gating, human escalation, and long-term research memory.
+- `Inference | confidence: high` The defensible layer is not browser execution alone. It is neutral UX diagnosis, evidence packaging, confidence calibration, and fix synthesis.
 
 ### Backup wedges
 
@@ -142,7 +142,7 @@ Why this lead wedge:
 
 - `Evidence-backed | confidence: high` Tools like Replit Agent, v0, and Lovable are pushing app creation speed up dramatically.
 - `Evidence-backed | confidence: medium` Synthetic testing entrants like Uxia, Crowdi, and Loop11 AI Browser Agents show growing willingness to let AI participate in usability evaluation.
-- `Evidence-backed | confidence: medium` Browser infrastructure and agentic test execution layers like Browserbase, Stagehand, and Zencoder make automated interaction technically feasible.
+- `Evidence-backed | confidence: high` Native builder tools now include more testing, monitoring, feedback, and remediation loops, while browser infrastructure and verification layers like Browserbase make automated interaction and task-success verification increasingly feasible.
 - `Evidence-backed | confidence: medium` Conversational-agent research has matured enough to provide practical dimensions for analyzing satisfaction, frustration, trust, and repair in agent interactions.
 - `Inference | confidence: high` The result is a timing window where app creation is getting automated faster than experience validation.
 
@@ -169,7 +169,7 @@ If any of these happen in the next 7 days, the lead wedge should be reconsidered
 |---|---|---|
 | Synthetic fidelity gap | Weak trust kills adoption fast | Start with narrow tasks and confidence rules; keep human escalation as fallback |
 | Category confusion with QA | Buyers may think this is just another testing tool | Keep messaging centered on usability, trust, and user-task success rather than functional correctness |
-| Platform absorption risk | Builders may copy obvious gating logic | Win on speed of learning, issue corpus, and structured feedback loop, not just scorecards |
+| Platform absorption risk | Builders are already adding native testing, feedback, monitoring, and security checks | Win on cross-platform neutrality, UX diagnosis quality, issue corpus, and structured feedback loop, not just browser execution or scorecards |
 | Data access friction | Without app access, no service can run | Validate acceptable access modes early: screenshots, prototypes, staging URLs, or recordings |
 
 ## Not In Scope For The First Wedge

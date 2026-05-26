@@ -24,6 +24,7 @@ Legend:
 - `Inference | confidence: high` What looks new is combining those methods for agentic interaction loops where conversation, tools, and flow execution all matter at once.
 - `Evidence-backed | confidence: medium` Research already supports several of the signals we care about: response relevance, dialogue helpfulness, user satisfaction, breakdown, repair, trust shifts, and the value of explicit micro-feedback.
 - `Evidence-backed | confidence: high` LLM-assisted qualitative coding is plausible, but the HCI literature warns against treating it as methodologically self-validating.
+- `Evidence-backed | confidence: medium` Newer 2026 work strengthens both sides of the thesis: Qux360 and AgentFixer support validation and fix-recommendation workflows, while synthetic-user and AI-generated-prototype papers reinforce the need for careful human grounding.
 - `Inference | confidence: medium` The right framing for this wedge is likely `observability + incident synthesis`, with UX research contributing the rubric and validation layer rather than defining the entire product.
 
 ## How This Differs From Adjacent Categories
@@ -48,6 +49,10 @@ Legend:
 | Breakdown and repair analysis | Breakdown and repair papers show trust and emotion can shift sharply after failure and partially recover later | Supports incident-based analysis instead of simple average quality scores | `Evidence-backed` |
 | Human-AI interaction rubrics | Microsoft HAI guidelines focus on expectation setting, efficient correction, uncertainty handling, and feedback loops | Useful as rubric components for scoring agent behavior | `Evidence-backed` |
 | LLM-assisted qualitative coding | ACM's HCI workshop report says LLMs are increasingly used in coding and synthesis, but need explicit standards and human oversight | Useful for method guardrails and product design | `Evidence-backed` |
+| AI-supported qualitative validation | Qux360 proposes validation primitives for improving reliability and transparency in AI-supported qualitative analysis | Supports explicit validation layers rather than opaque research summaries | `Evidence-backed` |
+| Failure-to-fix agent systems | AgentFixer frames a loop from failure detection to fix recommendations in agentic systems | Supports our diagnosis-to-repair positioning for agent UX incidents | `Evidence-backed` |
+| Synthetic-user realism evaluation | Synthetic Users, Real Differences evaluates realism differences in multi-turn user simulation | Reinforces that synthetic users should be treated as useful but bounded evidence | `Evidence-backed` |
+| AI-generated interface UX studies | Usable but Conventional finds AI-generated prototypes can score well pragmatically while being weaker on hedonic originality and innovation | Helps explain why task completion is insufficient as the only UX signal | `Evidence-backed` |
 
 ## Signals That Matter In An Agentic Interaction
 
@@ -114,6 +119,8 @@ flowchart LR
 - `Evidence-backed | confidence: high` Keep an explicit rubric or codebook for what counts as misunderstanding, no-progress loops, trust drops, and successful repair.
 - `Evidence-backed | confidence: high` Preserve human review for ambiguous, high-stakes, or privacy-sensitive incidents.
 - `Evidence-backed | confidence: high` Be explicit about privacy, retention, redaction, and whether humans ever inspect raw logs.
+- `Evidence-backed | confidence: medium` Treat synthetic users as diagnostic probes, not as automatic substitutes for real people.
+- `Inference | confidence: high` Keep a validation trail from raw trace to coded incident to recommendation, especially when the output will trigger agent fixes.
 - `Inference | confidence: medium` Separate descriptive analysis from fix recommendations so teams can see both the evidence and the interpretation.
 
 ## Implication For Our Two Main Wedge Directions
@@ -145,3 +152,8 @@ flowchart LR
 - [Understanding the user experience of customer service chatbots: What can we learn from customer satisfaction surveys?](https://www.sintef.no/en/publications/publication/1962107/)
 - [Guidelines for Human-AI Interaction](https://www.microsoft.com/en-us/research/articles/guidelines-for-human-ai-interaction-eighteen-best-practices-for-human-centered-ai-design/)
 - [The State of Large Language Models in HCI Research: Workshop Report](https://interactions.acm.org/archive/view/january-february-2025/the-state-of-large-language-models-in-hci-research-workshop-report)
+- [Qux360: A Validation Framework for Improving Reliability and Transparency of AI-Supported Qualitative Analysis](https://research.ibm.com/publications/qux360-a-validation-framework-for-improving-reliability-and-transparency-of-ai-supported-qualitative-analysis)
+- [AgentFixer: From Failure Detection to Fix Recommendations in Agentic Systems](https://research.ibm.com/publications/agentfixer-from-failure-detection-to-fix-recommendations-in-agentic-systems)
+- [Synthetic Users, Real Differences](https://arxiv.org/abs/2605.02624)
+- [Usable but Conventional](https://arxiv.org/abs/2605.15124)
+- [UX in the Age of AI](https://arxiv.org/abs/2605.05600)

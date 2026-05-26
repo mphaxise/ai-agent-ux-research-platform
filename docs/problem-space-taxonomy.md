@@ -11,6 +11,7 @@ Legend:
 
 - `Inference | confidence: high` The hardest failure is not “the agent wrote bad code.” It is “the generated app technically works but is still confusing, untrustworthy, or misaligned with the user’s job.”
 - `Inference | confidence: high` A useful service must cover both `what to test` and `how to return findings` in a machine-usable format.
+- `Evidence-backed | confidence: high` May 2026 market evidence adds a stronger trust and safety dimension: vibe-coded apps can leak sensitive data, builder platforms are adding security remediation loops, and AI-generated interfaces may be usable but conventional or weak on deeper experience qualities.
 - `Assumption | confidence: medium-low` Synthetic testing alone will cover many surface-level UX problems, but some higher-stakes trust and context questions will still need human escalation.
 
 ## Taxonomy
@@ -28,6 +29,9 @@ Legend:
 | 9. Human override and escalation patterns | When should the system stop and ask for human research input? | Synthetic test results conflict, confidence is low, or risk is too high to auto-fix | A fully autonomous loop can overfit weak evidence or miss nuanced context | Escalation rule, confidence score, human review packet | Low to medium | `Assumption` |
 | 10. Insight packaging back to the agent | What exact format should findings come back in so an agent can act on them? | Findings are trapped in a PDF or dashboard with no executable next step | Human-readable research reports do not map cleanly into agent workflows | Structured issue JSON, severity, evidence links, suggested fix directions | High | `Inference` |
 | 11. Research memory and reuse | How does the service remember what worked, failed, or was already tested? | Agents repeat the same mistakes across apps or releases | Without memory, every run is a one-off critique | Reusable issue taxonomy, benchmark history, prior briefs | Medium | `Assumption` |
+| 12. Safe publishing, privacy, and exposure risk | Could the generated app expose sensitive data, internal workflows, or risky public access? | Internal tools or customer-data workflows are accidentally published or insufficiently protected | App-building agents can make production publication easy without enough governance context | Visibility audit, permission check, data-flow note, exposure warning | Medium | `Evidence-backed` + `Inference` |
+| 13. Hedonic quality and originality | Does the generated interface feel distinctive, appropriate, and confidence-building beyond basic usability? | The app is functional but generic, uninspired, or misaligned with the brand or emotional stakes | Agents can produce usable conventional UI without enough product taste or audience nuance | Preference comments, trust ratings, brand-fit notes, comparative screenshots | Low to medium | `Evidence-backed` + `Inference` |
+| 14. AI-agent usability and verifiability | Can another agent or computer-use system reliably understand and complete the workflow? | Icon-only controls, inaccessible labels, and ambiguous states confuse browser agents even if humans can infer intent | Generated apps may lack semantic affordances that support both accessibility and agent operation | Browser-agent trajectory, verifier result, accessibility tree, semantic audit | Medium | `Evidence-backed` + `Inference` |
 
 ## What To Solve First
 
@@ -41,6 +45,8 @@ The first problem slice should be narrow enough to validate quickly but broad en
    Why: common failure in AI-generated apps and easy to package back into actionable issues.
 3. `Task execution and interaction flow`
    Why: closest to the buyer’s real pain of “can someone actually complete the job?”
+4. `Safe publishing, privacy, and exposure risk`
+   Why: recent vibe-coding exposure incidents make this part of the quality conversation, even if it is not the whole product.
 
 ### Important but likely later
 
@@ -50,6 +56,8 @@ The first problem slice should be narrow enough to validate quickly but broad en
    Why: becomes a moat later, but not the first wedge.
 3. `Deep trust calibration for regulated or high-risk flows`
    Why: valuable, but higher burden of proof.
+4. `Hedonic quality and originality`
+   Why: strategically useful for product differentiation, but harder to validate with synthetic-only evidence.
 
 ## Implications For Product Shape
 
