@@ -174,3 +174,11 @@ The return object should likely include both machine-readable and human-readable
 - `Evidence-backed | confidence: high` Replit now documents Agent Inbox feedback, App Monitoring, Security Agent, Workspace Security Center, and Agent-assisted remediation loops.
 - `Evidence-backed | confidence: medium` v0 now exposes more deployment, logs, analytics, environment, terminal, and project-instruction surfaces.
 - `Inference | confidence: high` The product should not compete by being the browser runner. It should compete by producing a better UX diagnosis packet than native builder tools, raw logs, or pass/fail verifiers.
+
+## June 26, 2026 Update
+
+- `Evidence-backed | confidence: high` Lovable's June updates push Basic/Deep security scans, auto-fix, scheduled scans, security memory, Aikido penetration testing, and integrated browser testing deeper into the build flow.
+- `Evidence-backed | confidence: high` Replit's June updates add Package Firewall, production alert controls, Agent workspace instructions and skills, Claude connector support, voice mode, and SEO Agent.
+- `Evidence-backed | confidence: medium` v0's June updates add annotations mode and in-form clarifying questions, making human-to-agent feedback a more native part of the build workflow.
+- `Evidence-backed | confidence: high` New June papers split the synthetic-user evidence base: PerceptUI suggests persona-conditioned synthetic evaluation can become more realistic, while What Would GPT Click shows practical first-click misalignment and UXBench shows current MLLMs still struggle with fine-grained UI reasoning.
+- `Inference | confidence: high` The workflow report should now include three layers: usability diagnosis, evidence calibration, and safe-launch flags. The first says what failed; the second says how much to trust the signal; the third says whether the app appears risky to publish.

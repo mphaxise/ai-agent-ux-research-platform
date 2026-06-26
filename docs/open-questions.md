@@ -26,6 +26,8 @@ Legend:
 | 15. What remains valuable if builder platforms ship native testing, monitoring, feedback widgets, and security checks? | Platform absorption risk is now evidence-backed rather than theoretical | Native features are expanding quickly in Replit, Lovable, and v0 | Compare our concept directly against native platform features and ask what buyers would still pay an independent layer to do | `Evidence-backed` + `Inference` | Medium |
 | 16. Is the moat diagnosis and repair rather than testing itself? | Browser execution and task verification are becoming infrastructure | Browserbase Evaluations, Universal Verifier, WebTestBench, and OpenComputer strengthen the verification layer | Show buyers a raw test trace, a pass/fail verifier, and a UX diagnosis packet; ask which one changes what they would fix | `Inference` | Medium |
 | 17. Should we optimize for human usability, AI-agent usability, or both? | AI-first apps increasingly need to be usable by humans and by agents/computer-use systems | Browser-agent verification and AI app-builder workflows are converging | Test separate concept briefs: human usability validation, agent usability verification, and combined experience validation | `Inference` | Low |
+| 18. How should reports expose the calibration boundary of synthetic evidence? | June 2026 evidence shows both progress and serious behavioral misalignment in synthetic-user methods | PerceptUI supports persona-conditioned synthetic UX evaluation, while What Would GPT Click shows first-click misalignment and UXBench shows UI-reasoning limits | Show buyers report variants with confidence labels, human-verification triggers, and synthetic-vs-human evidence provenance | `Evidence-backed` + `Inference` | Medium |
+| 19. Should safe-launch risk become a first-class output dimension? | Security and privacy failures are now part of the user trust problem for AI-generated apps | TechRadar, The Verge, Axios, and new arXiv work all point to recurring vibe-coded app exposure and vulnerability patterns | Test whether buyers want safe-launch flags in the UX report or prefer those routed to separate security tooling | `Evidence-backed` + `Inference` | Medium |
 
 ## Unknowns Most Worth Killing First
 
@@ -36,6 +38,7 @@ These are the fastest make-or-break questions:
 3. `Workflow`: should this be an API, gate, or concierge packet?
 4. `Access`: can customers safely expose enough of the app for the service to work?
 5. `Absorption`: what must remain independent when native builder platforms add testing and monitoring?
+6. `Calibration`: how do we prevent plausible synthetic findings from being overtrusted?
 
 ## What Would Count As Strong Learning
 

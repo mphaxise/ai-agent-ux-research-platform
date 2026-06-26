@@ -1,6 +1,6 @@
-# Market Options As Of May 26, 2026
+# Market Options As Of June 26, 2026
 
-Context: this doc captures what an AI-first company can realistically buy, use, or build today for user testing and experience validation. It updates the earlier divergence work with the current market state as of May 26, 2026.
+Context: this doc captures what an AI-first company can realistically buy, use, or build today for user testing and experience validation. It was first created from the May 2026 divergence work and refreshed with the latest June 26, 2026 market and research signals.
 
 Legend:
 - `Evidence-backed`: grounded in cited product pages, docs, announcements, papers, or community threads.
@@ -13,6 +13,7 @@ Legend:
 - `Inference | confidence: high` The opportunity is no longer "run browser tests." Builder platforms and infrastructure vendors are already moving there.
 - `Inference | confidence: high` The sharper whitespace is `UX diagnosis and fix synthesis`: explain where the experience failed, why it likely failed, what evidence supports that, and what the builder agent or human team should change.
 - `Evidence-backed | confidence: medium` Synthetic user testing is gaining product maturity, but HCI and practitioner sources continue to warn about realism gaps and overtrust.
+- `Evidence-backed | confidence: high` June 2026 strengthened the same pattern: Lovable and Replit both moved deeper into security/testing/agent-customization loops, while new papers made synthetic-user evaluation both more promising and more contested.
 - `Inference | confidence: medium` The best near-term stack for an AI-first company is hybrid: cheap synthetic or browser-agent checks for every iteration, plus human validation for risky launches or ambiguous findings.
 
 ## Option Map
@@ -54,6 +55,29 @@ Legend:
 - `Evidence-backed | confidence: high` Replit's April-May updates emphasize Security Agent, Workspace Security Center, private publishing, external access tokens, and automatic vulnerability workflows.
 - `Inference | confidence: high` For AI-generated apps, quality validation is no longer only UX flow validation. Trust, privacy, visibility, and safe publishing are now part of the buyer's mental model.
 
+## June 26, 2026 Fresh Pass
+
+### Builder platforms moved further into validation and security
+
+- `Evidence-backed | confidence: high` Lovable's June changelog adds deeper security infrastructure: Basic and Deep scan profiles, automatic fixes for eligible Basic scan findings, scheduled enterprise security scans, security memory, Aikido penetration testing across plans, audit-log filtering, and more integrated browser testing in the regular build flow.
+- `Evidence-backed | confidence: high` Replit's June changelog adds Package Firewall, production alert controls, Agent workspace instructions and skills, Claude connector support, voice mode, guest access controls, SEO Agent, and more business/enterprise app integration surfaces such as Shopify, Microsoft Fabric, Stripe, and custom domain automation.
+- `Evidence-backed | confidence: medium` v0's June changelog adds annotations mode, in-form clarifying questions, custom skill renaming, feature-flag support, ZIP downloads, and stronger deployment/preview recovery behavior.
+- `Inference | confidence: high` Builder-native platforms are no longer only app generators. They are becoming integrated product-operation surfaces: build, test, secure, publish, monitor, and refine from the same agent loop.
+
+### Synthetic-user evidence became more polarized
+
+- `Evidence-backed | confidence: high` PerceptUI argues that persona-conditioned synthetic users can reach human-level realism on UI/UX response prediction and produce population-level response distributions.
+- `Evidence-backed | confidence: high` What Would GPT Click reports substantial misalignment between GPT-predicted and real first-click behavior across real UX practice tasks, with personas and chain-of-thought failing to create reliable fidelity improvements.
+- `Evidence-backed | confidence: high` UXBench shows multimodal models remain limited at fine-grained UI-based reasoning across layout relationships, visual hierarchy, and content consistency.
+- `Inference | confidence: high` The right product stance is not "synthetic users work" or "synthetic users fail." It is: synthetic users are useful diagnostic probes when the method is explicit, bounded, calibrated, and paired with real-user or expert validation at decision points.
+
+### Vibe-coded app risk became more empirical
+
+- `Evidence-backed | confidence: high` A June 2026 TechRadar guide frames the prototype-to-production transition as requiring security audit, edge-case testing, hosting decisions, monitoring, backup, and production hardening.
+- `Evidence-backed | confidence: high` A June 2026 Verge article emphasizes that vibe-coded apps can expose sensitive data when creators lack threat-model awareness, authentication rigor, or security review habits.
+- `Evidence-backed | confidence: high` Understanding the (In)Security of Vibe-Coded Applications finds recurring vulnerability patterns in real deployed vibe-coded apps, including placeholder logic, unfiltered input, and secret exposure.
+- `Inference | confidence: high` Safe launch confidence should now be treated as adjacent to UX validation, not a separate world. Users experience insecure or fragile apps as low trust, even if the happy-path UI is usable.
+
 ## Market Implications For This Project
 
 - `Inference | confidence: high` The lead wedge should be framed as `neutral UX validation and diagnosis for AI-generated apps`, not as generic synthetic testing.
@@ -78,6 +102,8 @@ Legend:
 3. Should the service optimize for human usability, AI-agent usability, or both?
 4. Is the best defensible layer diagnosis and repair, not testing itself?
 5. Can the service package security/privacy/trust signals without becoming a security product?
+6. Can a synthetic-user product expose its calibration boundary clearly enough that teams do not overtrust plausible but misaligned behavior?
+7. Should safe-launch checks become a first-class part of the workflow validation report?
 
 ## Source Notes
 
@@ -116,3 +142,14 @@ Legend:
 - [OpenClaw session tools](https://docs.openclaw.ai/concepts/session-tool)
 - [OpenClaw v2026.4.12](https://openclawlaunch.com/news/openclaw-v2026-4-12-active-memory-codex-lm-studio-exec-policy)
 - [OpenClaw v2026.5.2](https://openclawlaunch.com/news/openclaw-v2026-5-2-plugin-externalization-grok-4-3)
+- [Replit June 5, 2026 changelog](https://docs.replit.com/updates/2026/06/05/changelog)
+- [Replit June 12, 2026 changelog](https://docs.replit.com/updates/2026/06/12/changelog)
+- [Replit June 19, 2026 changelog](https://docs.replit.com/updates/2026/06/19/changelog)
+- [Lovable changelog](https://docs.lovable.dev/changelog?page=1)
+- [v0 changelog](https://v0.app/changelog)
+- [PerceptUI](https://arxiv.org/abs/2606.05697)
+- [What Would GPT Click](https://arxiv.org/abs/2605.18302)
+- [UXBench / UI-UX](https://arxiv.org/abs/2606.13192)
+- [Understanding the (In)Security of Vibe-Coded Applications](https://arxiv.org/abs/2606.23130)
+- [Vibe coding guide: How to transition from AI generation to live deployment](https://www.techradar.com/pro/vibe-coding-guide-how-to-transition-from-ai-generation-to-live-deployment)
+- [Read this before you vibe-code another app](https://www.theverge.com/ai-artificial-intelligence/950844/vibe-coding-security-risks-apps)

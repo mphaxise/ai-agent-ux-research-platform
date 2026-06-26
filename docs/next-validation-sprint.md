@@ -15,6 +15,8 @@ Backups still tracked:
 - `H2 | Assumption | confidence: low` They will trust a synthetic-user-based output enough to change what ships, especially if confidence and evidence are explicit.
 - `H3 | Assumption | confidence: low` They prefer an API-like or structured service response over a generic dashboard.
 - `H4 | Assumption | confidence: low` A hybrid fallback with human escalation materially increases trust without collapsing the whole product into services.
+- `H5 | Assumption | confidence: low` A report that names its `calibration boundary` is more trustworthy than a report that simply presents synthetic findings as research truth.
+- `H6 | Assumption | confidence: low` Teams shipping AI-generated apps want lightweight `safe-launch` flags inside UX validation, even if deep security review remains separate.
 
 ## Interview Targets
 
@@ -36,8 +38,10 @@ Create these before or during the sprint:
 2. A one-page concept brief for each backup wedge.
 3. A mocked request/response contract showing what an app-building agent sends and receives.
 4. Two concierge-style sample reports generated on real or realistic staging apps.
-5. A simple comparison sheet: synthetic-only vs hybrid human escalation.
-6. A competitive comparison against native builder testing, browser-agent evals, and human research platforms.
+5. A calibrated evidence mock showing synthetic probes, browser-agent evidence, human confirmation needs, and confidence levels side-by-side.
+6. A simple comparison sheet: synthetic-only vs hybrid human escalation.
+7. A competitive comparison against native builder testing, browser-agent evals, and human research platforms.
+8. A lightweight safe-launch flag section that separates UX trust risks from security issues requiring expert review.
 
 ## 5-Day Plan
 
@@ -60,6 +64,8 @@ Each conversation should force answers to these questions:
 5. Would you use this before launch, after launch, or both?
 6. What access mode would you allow: screenshots, prototype, staging URL, authenticated staging, or production replay?
 7. Would you pay for this as tooling, QA infrastructure, research, or premium platform capability?
+8. Does seeing an explicit calibration boundary increase or decrease your trust in synthetic-user findings?
+9. Should safe-launch risks, such as confusing auth, privacy surprises, fragile data handling, or obvious security red flags, live in the same report or a separate review?
 
 ## Success Criteria
 
@@ -70,6 +76,8 @@ Proceed signals:
 3. `>= 3` prefer a structured, agent-readable output over a generic dashboard.
 4. `>= 2` volunteer a real prototype, staging app, or generated site for deeper evaluation.
 5. `>= 2` identify a clear budget owner and a plausible budget path.
+6. `>= 4` say the calibration boundary makes the report more credible rather than less credible.
+7. `>= 3` want safe-launch flags included as a scoped section of the UX validation output.
 
 Failure signals:
 
@@ -77,6 +85,8 @@ Failure signals:
 2. Most interviewees reject synthetic-user evidence as too weak to influence shipping.
 3. Buyers only want post-launch analytics, not research in the build loop.
 4. Security or access constraints make the service unusable for real apps.
+5. Calibration language makes the product feel less actionable rather than more trustworthy.
+6. Safe-launch flags create category confusion that buyers expect their security or QA stack to handle separately.
 
 ## Exit Decision
 

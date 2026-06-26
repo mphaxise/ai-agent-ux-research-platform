@@ -13,10 +13,12 @@ Legend:
 - `Evidence-backed | confidence: medium` A direct category around synthetic or AI-led usability testing is emerging. Uxia, Crowdi, Loop11 AI Browser Agents, and RUXAILAB each pitch some version of AI-powered or synthetic user evaluation.
 - `Evidence-backed | confidence: high` Since the first pass, builder platforms have absorbed more native testing, feedback, monitoring, security, and deployment validation. Lovable now documents browser testing and verification tools; Replit added Agent Inbox, App Monitoring, Security Agent, and Workspace Security Center; v0 has expanded project, deployment, terminal, analytics, and environment surfaces.
 - `Evidence-backed | confidence: high` Browser-agent evaluation has moved up-stack. Browserbase Evaluations and Universal Verifier show that browser execution plus success verification is becoming infrastructure, not a sufficient standalone moat.
+- `Evidence-backed | confidence: high` The June 2026 refresh adds more pressure in the same direction: Lovable added stronger security scans, auto-fix, Aikido penetration testing, and more integrated browser testing; Replit added Package Firewall, production alerts, Agent skills/instructions, Claude connector support, and more app-operation surfaces; v0 added annotations mode and in-form clarification loops.
+- `Evidence-backed | confidence: high` June 2026 research sharpened the synthetic-user debate. PerceptUI points toward human-aligned persona-conditioned synthetic UX evaluation, while What Would GPT Click and UXBench show major limitations in behavioral click prediction and UI reasoning.
 - `Inference | confidence: high` The whitespace is not generic analytics or browser testing. It is structured UX diagnosis: define audience, run the right validation mode, synthesize evidence, calibrate confidence, and hand results back in an agent-readable format.
 - `Assumption | confidence: low` The most valuable long-term moat is not the test runner alone; it is the corpus of request context, issue taxonomy, fix recommendations, and agent-feedback loops gathered across many builds.
 
-See also: [Market Options As Of May 26, 2026](./market-options-may-2026.md).
+See also: [Market Options As Of June 26, 2026](./market-options-may-2026.md).
 
 ## Direct Competitors
 
@@ -77,6 +79,16 @@ These are not competitors; they are evidence that AI-generated app production is
 | Synthetic users remain contested | Uxia/Crowdi/Loop11/Jina show supply; r/UXResearch discussion and papers on synthetic-user realism gaps show continued skepticism | Hybrid positioning is safer than "synthetic replaces users" | `Evidence-backed` | Medium |
 | Security and safe publishing became part of the quality conversation | Axios reported exposed vibe-coding apps; Replit emphasized Security Agent and private publishing updates | UX validation should include trust, privacy, and safe-release signals without becoming a full security product | `Evidence-backed` | High |
 
+## June 26, 2026 Fresh Pass
+
+| Market movement | New evidence | What it changes | Basis | Confidence |
+|---|---|---|---|---|
+| Builder platforms are becoming product-ops surfaces | Replit added Package Firewall, production alert controls, Agent workspace instructions and skills, Claude connector support, voice mode, SEO Agent, Shopify, Microsoft Fabric, and Stripe workflows | The buyer expectation is shifting from app generation to ongoing app operation and remediation | `Evidence-backed` | High |
+| Lovable is pushing security and testing into the build loop | Lovable added security scan profiles, auto-fix for eligible critical findings, scheduled Deep scans, security memory, Aikido penetration testing, and more integrated browser testing | Any external wedge needs to explain what independent UX diagnosis adds beyond native security and browser-test loops | `Evidence-backed` | High |
+| v0 is improving feedback and clarification loops | v0 added annotations mode, in-form clarifying questions, image attachments to queued prompts, skills changes, and feature-flag support | Human feedback to the agent is becoming a native builder interaction pattern | `Evidence-backed` | Medium |
+| Synthetic users are both improving and under scrutiny | PerceptUI reports human-level realism for persona-conditioned UI/UX response prediction; What Would GPT Click reports significant behavioral click misalignment; UXBench shows MLLMs still struggle with UI reasoning | The product should expose calibration, confidence, and human-verification pathways rather than treating synthetic outputs as self-certifying | `Evidence-backed` | High |
+| Vibe-coded app risk is now empirical and mainstream | TechRadar and The Verge warned about prototype-to-production security risks; a June arXiv study found recurring vulnerability patterns in deployed vibe-coded apps | Safe launch, privacy, and trust should become explicit report dimensions, even if the product remains UX-led | `Evidence-backed` | High |
+
 ## Manual Page Review Highlights
 
 This section goes one level deeper than the category labels above and captures what the product pages themselves are really signaling.
@@ -134,6 +146,8 @@ This is not a product category in itself, but it matters because buyers, builder
 - `Inference | confidence: medium` If we stay too close to researcher terminology, we may inherit skepticism from UX teams without winning their existing trust.
 - `Inference | confidence: medium` If we stay too close to QA terminology, we risk collapsing into a crowded browser-testing market.
 - `Inference | confidence: high` As of May 26, 2026, the best positioning is closer to: `a neutral UX diagnosis layer your builder agent can call before shipping`, with optional human verification when the synthetic signal is weak.
+- `Inference | confidence: high` As of June 26, 2026, the diagnosis layer should include a visible calibration boundary: where synthetic evidence is strong, where it is weak, and when real-user or expert validation is required.
+- `Inference | confidence: high` Safe-launch trust is now part of the UX story. A generated app that leaks data, mishandles auth, or publishes fragile code creates a bad user experience even if the interface flow completes.
 - `Inference | confidence: medium` A docs-first community layer could be strategically useful for distribution, recruiting interviews, and shaping the category narrative, but it should be treated as a support asset rather than the main product.
 
 ## Source Notes
@@ -169,6 +183,17 @@ This is not a product category in itself, but it matters because buyers, builder
 - [Lovable testing docs](https://docs.lovable.dev/features/testing)
 - [Lovable browser testing docs](https://docs.lovable.dev/features/browser-testing)
 - [Axios on exposed vibe-coding apps](https://www.axios.com/2026/05/07/loveable-replit-vibe-coding-privacy)
+- [TechRadar vibe coding deployment guide](https://www.techradar.com/pro/vibe-coding-guide-how-to-transition-from-ai-generation-to-live-deployment)
+- [The Verge on vibe-coded app security risks](https://www.theverge.com/ai-artificial-intelligence/950844/vibe-coding-security-risks-apps)
+- [Understanding the (In)Security of Vibe-Coded Applications](https://arxiv.org/abs/2606.23130)
+- [Replit June 5, 2026 changelog](https://docs.replit.com/updates/2026/06/05/changelog)
+- [Replit June 12, 2026 changelog](https://docs.replit.com/updates/2026/06/12/changelog)
+- [Replit June 19, 2026 changelog](https://docs.replit.com/updates/2026/06/19/changelog)
+- [Lovable changelog](https://docs.lovable.dev/changelog?page=1)
+- [v0 changelog](https://v0.app/changelog)
+- [PerceptUI](https://arxiv.org/abs/2606.05697)
+- [What Would GPT Click](https://arxiv.org/abs/2605.18302)
+- [UXBench / UI-UX](https://arxiv.org/abs/2606.13192)
 - [Reddit maker launch for Uxia](https://www.reddit.com/r/ProductHunters/comments/1mbqmx5)
 - [r/UXResearch thread on AI-driven usability testing](https://www.reddit.com/r/UXResearch/comments/1tcxy0y/are_there_any_ai_driven_usability_testing_tools/)
 - [r/SaaS discussion on simulated user behavior](https://www.reddit.com/r/SaaS/comments/1ijkxfi)

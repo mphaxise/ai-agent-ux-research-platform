@@ -25,6 +25,7 @@ Legend:
 - `Evidence-backed | confidence: medium` Research already supports several of the signals we care about: response relevance, dialogue helpfulness, user satisfaction, breakdown, repair, trust shifts, and the value of explicit micro-feedback.
 - `Evidence-backed | confidence: high` LLM-assisted qualitative coding is plausible, but the HCI literature warns against treating it as methodologically self-validating.
 - `Evidence-backed | confidence: medium` Newer 2026 work strengthens both sides of the thesis: Qux360 and AgentFixer support validation and fix-recommendation workflows, while synthetic-user and AI-generated-prototype papers reinforce the need for careful human grounding.
+- `Evidence-backed | confidence: high` June 2026 adds direct evidence for calibration as a product requirement: PerceptUI strengthens persona-conditioned synthetic evaluation, while What Would GPT Click and UXBench show behavior and UI-reasoning gaps that would be dangerous to hide.
 - `Inference | confidence: medium` The right framing for this wedge is likely `observability + incident synthesis`, with UX research contributing the rubric and validation layer rather than defining the entire product.
 
 ## How This Differs From Adjacent Categories
@@ -53,6 +54,9 @@ Legend:
 | Failure-to-fix agent systems | AgentFixer frames a loop from failure detection to fix recommendations in agentic systems | Supports our diagnosis-to-repair positioning for agent UX incidents | `Evidence-backed` |
 | Synthetic-user realism evaluation | Synthetic Users, Real Differences evaluates realism differences in multi-turn user simulation | Reinforces that synthetic users should be treated as useful but bounded evidence | `Evidence-backed` |
 | AI-generated interface UX studies | Usable but Conventional finds AI-generated prototypes can score well pragmatically while being weaker on hedonic originality and innovation | Helps explain why task completion is insufficient as the only UX signal | `Evidence-backed` |
+| Persona-conditioned synthetic UX | PerceptUI predicts persona-specific UI/UX responses and rationales with reported human-level realism | Points toward better synthetic evaluators, especially when conditioned on user context | `Evidence-backed` |
+| Synthetic click-behavior misalignment | What Would GPT Click finds GPT click distributions diverged from real users in many first-click tasks | Shows why synthetic behavior should be calibrated against real user evidence | `Evidence-backed` |
+| UI reasoning benchmarks | UXBench evaluates multimodal models on layout, hierarchy, and content consistency reasoning, showing current limitations | Supports explicit confidence labels for screenshot-only or model-only UX diagnosis | `Evidence-backed` |
 
 ## Signals That Matter In An Agentic Interaction
 
@@ -121,6 +125,7 @@ flowchart LR
 - `Evidence-backed | confidence: high` Be explicit about privacy, retention, redaction, and whether humans ever inspect raw logs.
 - `Evidence-backed | confidence: medium` Treat synthetic users as diagnostic probes, not as automatic substitutes for real people.
 - `Inference | confidence: high` Keep a validation trail from raw trace to coded incident to recommendation, especially when the output will trigger agent fixes.
+- `Inference | confidence: high` Every incident packet should state evidence provenance: real user, synthetic user, browser agent, heuristic, benchmark/verifier, or expert review.
 - `Inference | confidence: medium` Separate descriptive analysis from fix recommendations so teams can see both the evidence and the interpretation.
 
 ## Implication For Our Two Main Wedge Directions
@@ -155,5 +160,8 @@ flowchart LR
 - [Qux360: A Validation Framework for Improving Reliability and Transparency of AI-Supported Qualitative Analysis](https://research.ibm.com/publications/qux360-a-validation-framework-for-improving-reliability-and-transparency-of-ai-supported-qualitative-analysis)
 - [AgentFixer: From Failure Detection to Fix Recommendations in Agentic Systems](https://research.ibm.com/publications/agentfixer-from-failure-detection-to-fix-recommendations-in-agentic-systems)
 - [Synthetic Users, Real Differences](https://arxiv.org/abs/2605.02624)
+- [PerceptUI](https://arxiv.org/abs/2606.05697)
+- [What Would GPT Click](https://arxiv.org/abs/2605.18302)
+- [UXBench / UI-UX](https://arxiv.org/abs/2606.13192)
 - [Usable but Conventional](https://arxiv.org/abs/2605.15124)
 - [UX in the Age of AI](https://arxiv.org/abs/2605.05600)

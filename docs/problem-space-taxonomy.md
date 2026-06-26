@@ -12,6 +12,7 @@ Legend:
 - `Inference | confidence: high` The hardest failure is not “the agent wrote bad code.” It is “the generated app technically works but is still confusing, untrustworthy, or misaligned with the user’s job.”
 - `Inference | confidence: high` A useful service must cover both `what to test` and `how to return findings` in a machine-usable format.
 - `Evidence-backed | confidence: high` May 2026 market evidence adds a stronger trust and safety dimension: vibe-coded apps can leak sensitive data, builder platforms are adding security remediation loops, and AI-generated interfaces may be usable but conventional or weak on deeper experience qualities.
+- `Evidence-backed | confidence: high` June 2026 research adds a calibration problem: synthetic UX methods are improving, but real first-click studies and UI reasoning benchmarks show that models can still diverge from human behavior in decision-relevant ways.
 - `Assumption | confidence: medium-low` Synthetic testing alone will cover many surface-level UX problems, but some higher-stakes trust and context questions will still need human escalation.
 
 ## Taxonomy
@@ -32,6 +33,7 @@ Legend:
 | 12. Safe publishing, privacy, and exposure risk | Could the generated app expose sensitive data, internal workflows, or risky public access? | Internal tools or customer-data workflows are accidentally published or insufficiently protected | App-building agents can make production publication easy without enough governance context | Visibility audit, permission check, data-flow note, exposure warning | Medium | `Evidence-backed` + `Inference` |
 | 13. Hedonic quality and originality | Does the generated interface feel distinctive, appropriate, and confidence-building beyond basic usability? | The app is functional but generic, uninspired, or misaligned with the brand or emotional stakes | Agents can produce usable conventional UI without enough product taste or audience nuance | Preference comments, trust ratings, brand-fit notes, comparative screenshots | Low to medium | `Evidence-backed` + `Inference` |
 | 14. AI-agent usability and verifiability | Can another agent or computer-use system reliably understand and complete the workflow? | Icon-only controls, inaccessible labels, and ambiguous states confuse browser agents even if humans can infer intent | Generated apps may lack semantic affordances that support both accessibility and agent operation | Browser-agent trajectory, verifier result, accessibility tree, semantic audit | Medium | `Evidence-backed` + `Inference` |
+| 15. Synthetic evidence calibration | Which findings are safe to trust from synthetic probes, and which need human confirmation? | A synthetic user gives a plausible critique or click path that does not match real users | LLMs can model language and rationales better than embodied attention, visual salience, or real decision behavior | Confidence label, evidence provenance, calibration note, human-verification trigger | Low to medium | `Evidence-backed` + `Inference` |
 
 ## What To Solve First
 
@@ -47,6 +49,8 @@ The first problem slice should be narrow enough to validate quickly but broad en
    Why: closest to the buyer’s real pain of “can someone actually complete the job?”
 4. `Safe publishing, privacy, and exposure risk`
    Why: recent vibe-coding exposure incidents make this part of the quality conversation, even if it is not the whole product.
+5. `Synthetic evidence calibration`
+   Why: the service must be trusted for action, and trust depends on knowing when synthetic evidence is enough versus when real users are required.
 
 ### Important but likely later
 

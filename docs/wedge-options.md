@@ -46,6 +46,7 @@ Calculation used here:
 - Value proposition: send the app URL, audience, mission, and context; receive structured UX findings, evidence, severity, confidence, and suggested fixes that can be handed back to the agent.
 - Most credible first instantiation: a `workflow validation loop` that combines automated browser QA baseline checks, a small number of human or synthetic task runs, and post-task ratings before handing a structured diagnosis back to the builder agent.
 - Differentiator: cross-platform and diagnosis-first. Native builder tools can run tests and inspect logs, but this wedge explains the user-facing issue, confidence level, and likely fix path in an agent-consumable format.
+- June 2026 refinement: the report should include a `calibration boundary` that names which findings came from synthetic probes, which require human confirmation, and which safe-launch risks need security or expert review.
 - Expected willingness to pay: `Inference` says medium-high to high, because this can sit on the critical path of app quality and trust. Plausible starting range: startup tooling budget or platform add-on budget rather than enterprise research budget.
 - Business potential: High. Expansion path could include recurring validation, regression history, and human escalation.
 - Defensibility thesis: proprietary corpus of app contexts, personas, issue patterns, fix suggestions, and acceptance behavior from agents and humans.
@@ -143,6 +144,8 @@ Why this lead wedge:
 - `Evidence-backed | confidence: high` Tools like Replit Agent, v0, and Lovable are pushing app creation speed up dramatically.
 - `Evidence-backed | confidence: medium` Synthetic testing entrants like Uxia, Crowdi, and Loop11 AI Browser Agents show growing willingness to let AI participate in usability evaluation.
 - `Evidence-backed | confidence: high` Native builder tools now include more testing, monitoring, feedback, and remediation loops, while browser infrastructure and verification layers like Browserbase make automated interaction and task-success verification increasingly feasible.
+- `Evidence-backed | confidence: high` June 2026 updates show builder platforms continuing to absorb security, feedback, package-risk, and collaboration workflows into the agent loop.
+- `Evidence-backed | confidence: high` June 2026 research shows synthetic UX evidence is both advancing and risky to overtrust: PerceptUI strengthens the upside, while What Would GPT Click and UXBench sharpen the limitations.
 - `Evidence-backed | confidence: medium` Conversational-agent research has matured enough to provide practical dimensions for analyzing satisfaction, frustration, trust, and repair in agent interactions.
 - `Inference | confidence: high` The result is a timing window where app creation is getting automated faster than experience validation.
 
@@ -171,6 +174,8 @@ If any of these happen in the next 7 days, the lead wedge should be reconsidered
 | Category confusion with QA | Buyers may think this is just another testing tool | Keep messaging centered on usability, trust, and user-task success rather than functional correctness |
 | Platform absorption risk | Builders are already adding native testing, feedback, monitoring, and security checks | Win on cross-platform neutrality, UX diagnosis quality, issue corpus, and structured feedback loop, not just browser execution or scorecards |
 | Data access friction | Without app access, no service can run | Validate acceptable access modes early: screenshots, prototypes, staging URLs, or recordings |
+| Synthetic overtrust | Persona-conditioned synthetic outputs can sound plausible even when behavior diverges from real users | Make calibration, evidence source, and human-verification thresholds explicit in every report |
+| Safe-launch scope creep | Security and privacy are increasingly part of trust, but a UX product can become unfocused if it tries to be a full security scanner | Include safe-launch signals and escalation triggers, but integrate with specialist security tools rather than replacing them |
 
 ## Not In Scope For The First Wedge
 
