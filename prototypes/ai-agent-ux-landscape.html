@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A monthly community map of products, workflows, and experimental approaches in the AI agent UX research landscape.">
+  <meta name="description" content="A map of products, workflows, and experimental approaches helping AI agents validate whether the things they build are user-interest-worthy and ready to ship.">
   <meta name="theme-color" content="#f4efe4">
   <title>AI Agent UX Research Landscape</title>
   <style>
@@ -503,24 +503,21 @@
     .entry-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px 10px;
       margin-top: 18px;
       color: var(--muted);
-      font: 800 12px/1 ui-sans-serif, system-ui, sans-serif;
+      font: 800 12px/1.4 ui-sans-serif, system-ui, sans-serif;
     }
 
     .entry-links a {
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 7px 9px;
-      background: rgba(255, 255, 255, 0.42);
-      color: rgba(23, 32, 27, 0.78);
-      text-decoration: none;
+      color: var(--green);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
     }
 
     .entry-links a:hover {
-      color: #fff;
-      background: var(--green);
+      color: var(--clay);
     }
 
     footer {
@@ -570,7 +567,6 @@
       <a href="#map-title">Landscape</a>
       <a href="#updates-title">Monthly Update</a>
       <a href="#directory-title">Profiles</a>
-      <a href="#sources-title">Sources</a>
     </nav>
   </header>
 
@@ -579,17 +575,13 @@
       <div>
         <div class="eyebrow">Monthly UX validation landscape</div>
         <h1>AI Agent UX Research Landscape</h1>
-        <p class="lede">A community map for products, workflows, and experimental approaches helping AI agents validate whether the things they build are usable, trustworthy, and ready to ship.</p>
+        <p class="lede">A map for products, workflows, and experimental approaches helping AI agents validate whether the things they build are user-interest-worthy and ready to ship.</p>
       </div>
       <aside class="brief">
-        <h2>This week’s thesis</h2>
+        <h2>Current Thesis</h2>
         <p>Builder platforms are absorbing testing, monitoring, feedback, and security loops. The open space is calibrated UX diagnosis: what failed, why it matters, how confident we are, and when human validation is required.</p>
         <div class="chips">
-          <span class="chip">Monthly site update</span>
           <span class="chip">Latest research: Jun 26, 2026</span>
-          <span class="chip">Synthetic evidence is contested</span>
-          <span class="chip">Browser QA is becoming infra</span>
-          <span class="chip">Safe launch is UX</span>
         </div>
       </aside>
     </section>
@@ -900,64 +892,6 @@
       </div>
     </section>
 
-    <section aria-labelledby="sources-title">
-      <div class="section-title">
-        <div>
-          <h2 id="sources-title">Research Trail</h2>
-          <p>This page is a public surface for a living research repo. The underlying notes keep the evidence labels, confidence levels, and open questions visible.</p>
-        </div>
-      </div>
-      <div class="source-list">
-        <a href="https://www.microsoft.com/en-us/haxtoolkit/">
-          <strong>Microsoft HAX Toolkit</strong>
-          <span>Canonical human-AI design guidance. Useful comparator, but not a monthly agent UX validation map.</span>
-        </a>
-        <a href="https://pair.withgoogle.com/guidebook/">
-          <strong>Google PAIR Guidebook</strong>
-          <span>Strong AI product-design guidance and mental-model framing for responsible human-AI interaction.</span>
-        </a>
-        <a href="https://webarena.dev/">
-          <strong>WebArena</strong>
-          <span>Benchmark ecosystem for autonomous web agents; strong on task completion, not full UX launch confidence.</span>
-        </a>
-        <a href="https://os-world.github.io/">
-          <strong>OSWorld</strong>
-          <span>Computer-use benchmark for multimodal agents and execution-based evaluation.</span>
-        </a>
-        <a href="https://langfuse.com/">
-          <strong>Langfuse</strong>
-          <span>Agent tracing, evals, and observability; important adjacent infrastructure for UX observability.</span>
-        </a>
-        <a href="https://www.syntheticusers.com/">
-          <strong>Synthetic Users</strong>
-          <span>Directly relevant synthetic research vendor and useful comparison point for calibration claims.</span>
-        </a>
-        <a href="./divergence-market-map.md">
-          <strong>Market Map</strong>
-          <span>Competitors, substitutes, adjacent platforms, and June 2026 market movement.</span>
-        </a>
-        <a href="./market-options-may-2026.md">
-          <strong>Options Today</strong>
-          <span>What AI-first companies can use now for user testing and validation.</span>
-        </a>
-        <a href="./wedge-options.md">
-          <strong>Wedge Options</strong>
-          <span>Product wedges, scoring, risks, and the lead recommendation logic.</span>
-        </a>
-        <a href="./agent-ux-observability.md">
-          <strong>Agent UX Observability</strong>
-          <span>Alternate direction around incidents, traces, user repair, and trust drops.</span>
-        </a>
-        <a href="./problem-space-taxonomy.md">
-          <strong>Problem Taxonomy</strong>
-          <span>The UX problem categories this landscape is trying to make legible.</span>
-        </a>
-        <a href="./open-questions.md">
-          <strong>Open Questions</strong>
-          <span>Unknowns worth killing quickly, including calibration and launch-readiness scope.</span>
-        </a>
-      </div>
-    </section>
   </main>
 
   <footer class="shell">
@@ -977,6 +911,11 @@
           dot.classList.toggle("is-dimmed", filter !== "all" && dot.dataset.bucket !== filter);
         });
       });
+    });
+
+    document.querySelectorAll(".entry-links a").forEach((link) => {
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
     });
   </script>
 </body>
