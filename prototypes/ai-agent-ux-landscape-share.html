@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Agent UX Research Landscape Share Card</title>
+  <style>
+    :root {
+      --ink: #17201b;
+      --muted: #64706a;
+      --line: rgba(23, 32, 27, 0.14);
+      --green: #276b4f;
+      --clay: #bf684a;
+      --gold: #d7a43f;
+      --blue: #3e6f8f;
+      --shadow: 0 24px 80px rgba(52, 42, 30, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      width: 1600px;
+      min-height: 1100px;
+      color: var(--ink);
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(215, 164, 63, 0.32), transparent 34rem),
+        radial-gradient(circle at 90% 2%, rgba(62, 111, 143, 0.24), transparent 34rem),
+        linear-gradient(135deg, #f7f0df 0%, #eadfc9 52%, #f5ead5 100%);
+    }
+
+    .card {
+      width: 1480px;
+      margin: 46px auto;
+      padding: 42px;
+      border: 1px solid var(--line);
+      border-radius: 44px;
+      background: rgba(255, 252, 244, 0.76);
+      box-shadow: var(--shadow);
+    }
+
+    .top {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--green);
+      background: rgba(255, 252, 244, 0.7);
+      font: 800 13px/1 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 18px 0 0;
+      max-width: 860px;
+      font-size: 76px;
+      line-height: 0.9;
+      letter-spacing: -0.07em;
+    }
+
+    .dek {
+      margin: 0;
+      color: #37423d;
+      font-size: 25px;
+      line-height: 1.28;
+    }
+
+    .quadrant {
+      position: relative;
+      height: 760px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background:
+        linear-gradient(90deg, transparent calc(50% - 1px), rgba(23, 32, 27, 0.24) calc(50% - 1px), rgba(23, 32, 27, 0.24) calc(50% + 1px), transparent calc(50% + 1px)),
+        linear-gradient(0deg, transparent calc(50% - 1px), rgba(23, 32, 27, 0.24) calc(50% - 1px), rgba(23, 32, 27, 0.24) calc(50% + 1px), transparent calc(50% + 1px)),
+        radial-gradient(circle at 18% 20%, rgba(191, 104, 74, 0.13), transparent 22rem),
+        radial-gradient(circle at 78% 22%, rgba(39, 107, 79, 0.12), transparent 24rem),
+        radial-gradient(circle at 22% 78%, rgba(62, 111, 143, 0.12), transparent 24rem),
+        radial-gradient(circle at 80% 80%, rgba(215, 164, 63, 0.14), transparent 24rem),
+        #fff9ee;
+    }
+
+    .axis {
+      position: absolute;
+      z-index: 1;
+      color: rgba(23, 32, 27, 0.55);
+      font: 900 13px/1 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .axis.top { top: 22px; left: 50%; transform: translateX(-50%); }
+    .axis.bottom { bottom: 22px; left: 50%; transform: translateX(-50%); }
+    .axis.left { top: 50%; left: -50px; transform: rotate(-90deg) translateX(50%); }
+    .axis.right { top: 50%; right: -42px; transform: rotate(90deg) translateX(-50%); }
+
+    .quad-label {
+      position: absolute;
+      z-index: 1;
+      max-width: 280px;
+      color: rgba(23, 32, 27, 0.66);
+      font: 800 15px/1.25 ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .quad-label strong {
+      display: block;
+      color: rgba(23, 32, 27, 0.86);
+      font-size: 18px;
+    }
+
+    .q1 { left: 28px; top: 30px; }
+    .q2 { right: 28px; top: 30px; text-align: right; }
+    .q3 { left: 28px; bottom: 30px; }
+    .q4 { right: 28px; bottom: 30px; text-align: right; }
+
+    .dot {
+      --x: 50%;
+      --y: 50%;
+      --c: var(--green);
+      position: absolute;
+      z-index: 4;
+      left: var(--x);
+      top: var(--y);
+      transform: translate(-50%, -50%);
+      display: grid;
+      grid-template-columns: 18px max-content;
+      gap: 9px;
+      align-items: center;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .dot::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      border: 3px solid rgba(255, 252, 244, 0.94);
+      border-radius: 999px;
+      background: var(--c);
+      box-shadow: 0 7px 20px rgba(23, 32, 27, 0.2);
+    }
+
+    .dot span {
+      padding: 7px 9px;
+      border: 1px solid rgba(23, 32, 27, 0.1);
+      border-radius: 999px;
+      background: rgba(255, 252, 244, 0.88);
+      box-shadow: 0 10px 24px rgba(52, 42, 30, 0.12);
+      font: 900 13px/1 ui-sans-serif, system-ui, sans-serif;
+      white-space: nowrap;
+    }
+
+    .dot.product { --c: var(--green); }
+    .dot.workflow { --c: var(--clay); }
+    .dot.experimental { --c: var(--blue); }
+
+    .legend {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+      color: var(--muted);
+      font: 900 14px/1 ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .legend b {
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      margin-right: 7px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <section class="top">
+      <div>
+        <div class="eyebrow">AIUXResearch</div>
+        <h1>AI Agent UX Research Landscape</h1>
+      </div>
+      <p class="dek">A map for products, workflows, and experimental approaches helping AI agents validate whether the things they build are user-interest-worthy and ready to ship.</p>
+    </section>
+
+    <section class="quadrant" aria-label="AI agent UX research landscape map">
+      <div class="axis top">UX learning / validation maturity</div>
+      <div class="axis bottom">Task execution / capability checks</div>
+      <div class="axis left">Autonomous signals</div>
+      <div class="axis right">Human trust / handoff maturity</div>
+
+      <div class="quad-label q1"><strong>Synthetic diagnosis</strong>AI users, simulated personas, calibrated model critique.</div>
+      <div class="quad-label q2"><strong>Human-grounded insight</strong>Real participants, expert review, and AI-assisted synthesis.</div>
+      <div class="quad-label q3"><strong>Agent execution infra</strong>Browser agents, verifiers, QA loops, monitoring.</div>
+      <div class="quad-label q4"><strong>Launch confidence</strong>Review handoffs, readiness checks, trust and risk signals.</div>
+
+      <a class="dot product" style="--x: 25%; --y: 24%;" href="#"><span>Uxia</span></a>
+      <a class="dot product" style="--x: 18%; --y: 34%;" href="#"><span>Crowdi</span></a>
+      <a class="dot product" style="--x: 35%; --y: 31%;" href="#"><span>Loop11 AI Agents</span></a>
+      <a class="dot product" style="--x: 30%; --y: 18%;" href="#"><span>Jina Synthetic Users</span></a>
+      <a class="dot product" style="--x: 76%; --y: 22%;" href="#"><span>UserTesting</span></a>
+      <a class="dot product" style="--x: 84%; --y: 30%;" href="#"><span>Maze / Sprig</span></a>
+      <a class="dot product" style="--x: 25%; --y: 70%;" href="#"><span>Browserbase</span></a>
+      <a class="dot product" style="--x: 18%; --y: 78%;" href="#"><span>Replit / Lovable / v0</span></a>
+      <a class="dot experimental" style="--x: 37%; --y: 78%;" href="#"><span>WebTestBench</span></a>
+      <a class="dot experimental" style="--x: 40%; --y: 22%;" href="#"><span>PerceptUI</span></a>
+      <a class="dot experimental" style="--x: 45%; --y: 36%;" href="#"><span>What Would GPT Click</span></a>
+      <a class="dot experimental" style="--x: 34%; --y: 42%;" href="#"><span>UXBench</span></a>
+      <a class="dot workflow" style="--x: 56%; --y: 29%;" href="#"><span>Workflow Validation</span></a>
+      <a class="dot workflow" style="--x: 67%; --y: 35%;" href="#"><span>Human Review Handoff</span></a>
+      <a class="dot workflow" style="--x: 70%; --y: 66%;" href="#"><span>Launch Readiness</span></a>
+      <a class="dot workflow" style="--x: 45%; --y: 58%;" href="#"><span>Agent UX Observability</span></a>
+    </section>
+
+    <div class="legend">
+      <span><b style="background: var(--green);"></b>Product</span>
+      <span><b style="background: var(--clay);"></b>Workflow</span>
+      <span><b style="background: var(--blue);"></b>Experimental approach</span>
+    </div>
+  </main>
+</body>
+</html>
