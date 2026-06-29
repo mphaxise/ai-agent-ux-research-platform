@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A weekly community map of products, processes, and experimental approaches in the AI agent UX research landscape.">
+  <meta name="theme-color" content="#f4efe4">
+  <title>AI Agent UX Research Landscape</title>
+  <style>
+    :root {
+      --ink: #17201b;
+      --muted: #64706a;
+      --paper: #f4efe4;
+      --panel: rgba(255, 252, 244, 0.86);
+      --line: rgba(23, 32, 27, 0.14);
+      --green: #276b4f;
+      --clay: #bf684a;
+      --gold: #d7a43f;
+      --blue: #3e6f8f;
+      --plum: #734c6d;
+      --shadow: 0 24px 80px rgba(52, 42, 30, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(215, 164, 63, 0.28), transparent 28rem),
+        radial-gradient(circle at 86% 0%, rgba(62, 111, 143, 0.22), transparent 26rem),
+        linear-gradient(135deg, #f7f0df 0%, #eadfc9 52%, #f5ead5 100%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .shell {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      padding: 28px 0 28px;
+      align-items: end;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      padding: 18px 0 0;
+      color: rgba(23, 32, 27, 0.72);
+      font: 800 13px/1 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.03em;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 13px;
+      height: 13px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--green), var(--gold));
+      box-shadow: 0 0 0 5px rgba(39, 107, 79, 0.09);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      color: rgba(23, 32, 27, 0.7);
+      text-decoration: none;
+    }
+
+    .nav a:hover {
+      color: var(--green);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--green);
+      background: rgba(255, 252, 244, 0.58);
+      font: 700 12px/1.2 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 22px 0 18px;
+      font-size: clamp(44px, 7vw, 92px);
+      line-height: 0.88;
+      letter-spacing: -0.07em;
+      max-width: 850px;
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 720px;
+      color: #37423d;
+      font-size: clamp(18px, 2.1vw, 24px);
+      line-height: 1.35;
+    }
+
+    .brief {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .brief h2,
+    .section-title h2 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: -0.03em;
+    }
+
+    .brief p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .chip,
+    .filter-button {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 11px;
+      color: #2e3833;
+      background: rgba(255, 255, 255, 0.42);
+      font: 700 12px/1 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.03em;
+    }
+
+    .filter-button {
+      cursor: pointer;
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .filter-button:hover,
+    .filter-button.active {
+      transform: translateY(-1px);
+      color: #fff;
+      background: var(--green);
+    }
+
+    .map-card {
+      margin: 26px 0 34px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background: rgba(255, 252, 244, 0.74);
+      box-shadow: var(--shadow);
+    }
+
+    .map-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 6px 8px 16px;
+      align-items: end;
+    }
+
+    .map-top p,
+    .section-title p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .quadrant {
+      position: relative;
+      min-height: 690px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background:
+        linear-gradient(90deg, transparent calc(50% - 1px), rgba(23, 32, 27, 0.24) calc(50% - 1px), rgba(23, 32, 27, 0.24) calc(50% + 1px), transparent calc(50% + 1px)),
+        linear-gradient(0deg, transparent calc(50% - 1px), rgba(23, 32, 27, 0.24) calc(50% - 1px), rgba(23, 32, 27, 0.24) calc(50% + 1px), transparent calc(50% + 1px)),
+        radial-gradient(circle at 18% 20%, rgba(191, 104, 74, 0.13), transparent 18rem),
+        radial-gradient(circle at 78% 22%, rgba(39, 107, 79, 0.12), transparent 20rem),
+        radial-gradient(circle at 22% 78%, rgba(62, 111, 143, 0.12), transparent 21rem),
+        radial-gradient(circle at 80% 80%, rgba(215, 164, 63, 0.14), transparent 19rem),
+        #fff9ee;
+    }
+
+    .axis {
+      position: absolute;
+      z-index: 1;
+      color: rgba(23, 32, 27, 0.55);
+      font: 800 11px/1 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
+    .axis.top {
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .axis.bottom {
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .axis.left {
+      top: 50%;
+      left: -44px;
+      transform: rotate(-90deg) translateX(50%);
+    }
+
+    .axis.right {
+      top: 50%;
+      right: -35px;
+      transform: rotate(90deg) translateX(-50%);
+    }
+
+    .quad-label {
+      position: absolute;
+      z-index: 1;
+      max-width: 230px;
+      color: rgba(23, 32, 27, 0.64);
+      font: 700 13px/1.25 ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .quad-label strong {
+      display: block;
+      color: rgba(23, 32, 27, 0.82);
+      font-size: 15px;
+    }
+
+    .q1 { left: 24px; top: 24px; }
+    .q2 { right: 24px; top: 24px; text-align: right; }
+    .q3 { left: 24px; bottom: 24px; }
+    .q4 { right: 24px; bottom: 24px; text-align: right; }
+
+    .dot {
+      --x: 50%;
+      --y: 50%;
+      --c: var(--green);
+      position: absolute;
+      z-index: 4;
+      left: var(--x);
+      top: var(--y);
+      transform: translate(-50%, -50%);
+      display: grid;
+      grid-template-columns: 16px max-content;
+      gap: 8px;
+      align-items: center;
+      color: var(--ink);
+      text-decoration: none;
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+
+    .dot::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      border: 3px solid rgba(255, 252, 244, 0.92);
+      border-radius: 999px;
+      background: var(--c);
+      box-shadow: 0 7px 20px rgba(23, 32, 27, 0.2);
+    }
+
+    .dot span {
+      padding: 6px 8px;
+      border: 1px solid rgba(23, 32, 27, 0.1);
+      border-radius: 999px;
+      background: rgba(255, 252, 244, 0.82);
+      box-shadow: 0 10px 24px rgba(52, 42, 30, 0.12);
+      font: 800 12px/1 ui-sans-serif, system-ui, sans-serif;
+      white-space: nowrap;
+    }
+
+    .dot:hover {
+      transform: translate(-50%, -50%) scale(1.04);
+    }
+
+    .dot.is-dimmed {
+      opacity: 0.2;
+    }
+
+    .dot[data-bucket="product"] { --c: var(--green); }
+    .dot[data-bucket="process"] { --c: var(--clay); }
+    .dot[data-bucket="experimental"] { --c: var(--blue); }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 8px 2px;
+      color: var(--muted);
+      font: 700 12px/1 ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .legend b {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: 6px;
+      border-radius: 50%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 26px 0;
+    }
+
+    .panel {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: var(--panel);
+      box-shadow: 0 14px 50px rgba(52, 42, 30, 0.1);
+    }
+
+    .panel h3 {
+      margin: 0;
+      font-size: 21px;
+      letter-spacing: -0.03em;
+    }
+
+    .panel p,
+    .panel li {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .panel ul {
+      padding-left: 18px;
+      margin-bottom: 0;
+    }
+
+    .source-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 18px 0 54px;
+    }
+
+    .source-list a {
+      min-height: 86px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 252, 244, 0.62);
+      color: var(--ink);
+      text-decoration: none;
+      box-shadow: 0 12px 34px rgba(52, 42, 30, 0.08);
+    }
+
+    .source-list strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .source-list span {
+      color: var(--muted);
+      font: 700 12px/1.35 ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 42px 0 16px;
+      align-items: end;
+    }
+
+    .updates {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .update {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255, 252, 244, 0.68);
+    }
+
+    .update time {
+      color: var(--clay);
+      font: 900 12px/1 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .update h3 {
+      margin: 10px 0 8px;
+      font-size: 20px;
+    }
+
+    .update p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .directory {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      padding-bottom: 58px;
+    }
+
+    .entry {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: rgba(255, 252, 244, 0.76);
+      box-shadow: 0 14px 50px rgba(52, 42, 30, 0.09);
+    }
+
+    .entry h3 {
+      margin: 0 0 10px;
+      font-size: 25px;
+      letter-spacing: -0.04em;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 6px 9px;
+      background: rgba(23, 32, 27, 0.08);
+      color: rgba(23, 32, 27, 0.72);
+      font: 800 11px/1 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .entry p {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .entry dl {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 10px 14px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .entry dt {
+      color: var(--ink);
+      font: 900 12px/1.2 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .entry dd {
+      margin: 0;
+    }
+
+    footer {
+      padding: 34px 0 48px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font: 700 13px/1.5 ui-sans-serif, system-ui, sans-serif;
+    }
+
+    @media (max-width: 880px) {
+      .hero,
+      .grid,
+      .updates,
+      .directory,
+      .source-list {
+        grid-template-columns: 1fr;
+      }
+
+      .map-top,
+      .section-title,
+      .topbar {
+        display: block;
+      }
+
+      .nav {
+        justify-content: flex-start;
+        margin-top: 14px;
+      }
+
+      .quadrant {
+        min-height: 760px;
+      }
+
+      .dot span {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <a class="brand" href="#">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>AIUXResearch</span>
+    </a>
+    <nav class="nav" aria-label="Page sections">
+      <a href="#map-title">Landscape</a>
+      <a href="#updates-title">Weekly Progress</a>
+      <a href="#directory-title">Dot Pages</a>
+      <a href="#sources-title">Sources</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Weekly landscape tracker</div>
+        <h1>AI Agent UX Research Landscape</h1>
+        <p class="lede">A community map for products, processes, and experimental approaches helping AI agents validate whether the things they build are usable, trustworthy, and ready to ship.</p>
+      </div>
+      <aside class="brief">
+        <h2>This week’s thesis</h2>
+        <p>Builder platforms are absorbing testing, monitoring, feedback, and security loops. The open space is calibrated UX diagnosis: what failed, why it matters, how confident we are, and when human validation is required.</p>
+        <div class="chips">
+          <span class="chip">Updated Jun 26, 2026</span>
+          <span class="chip">Synthetic evidence is contested</span>
+          <span class="chip">Browser QA is becoming infra</span>
+          <span class="chip">Safe launch is UX</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="map-card" aria-labelledby="map-title">
+      <div class="map-top">
+        <div>
+          <h2 id="map-title">Landscape Map</h2>
+          <p>Dots are placed by evidence source and workflow depth. Click a dot to jump to its summary.</p>
+        </div>
+        <div class="chips" aria-label="Filter dots by bucket">
+          <button class="filter-button active" data-filter="all">All</button>
+          <button class="filter-button" data-filter="product">Products</button>
+          <button class="filter-button" data-filter="process">Processes</button>
+          <button class="filter-button" data-filter="experimental">Experimental</button>
+        </div>
+      </div>
+
+      <div class="quadrant">
+        <div class="axis top">UX diagnosis and learning</div>
+        <div class="axis bottom">Execution verification</div>
+        <div class="axis left">Autonomous / synthetic evidence</div>
+        <div class="axis right">Human-grounded evidence</div>
+
+        <div class="quad-label q1"><strong>Synthetic diagnosis</strong>AI users, simulated personas, calibrated model critique.</div>
+        <div class="quad-label q2"><strong>Human insight systems</strong>Real participants plus AI-assisted synthesis.</div>
+        <div class="quad-label q3"><strong>Agent execution infra</strong>Browser agents, verifiers, QA loops, monitoring.</div>
+        <div class="quad-label q4"><strong>Human-governed release gates</strong>Hybrid review, safe launch, expert escalation.</div>
+
+        <a class="dot" style="--x: 25%; --y: 24%;" data-bucket="product" href="#uxia"><span>Uxia</span></a>
+        <a class="dot" style="--x: 18%; --y: 34%;" data-bucket="product" href="#crowdi"><span>Crowdi</span></a>
+        <a class="dot" style="--x: 35%; --y: 31%;" data-bucket="product" href="#loop11"><span>Loop11 AI Agents</span></a>
+        <a class="dot" style="--x: 30%; --y: 18%;" data-bucket="product" href="#jina"><span>Jina Synthetic Users</span></a>
+        <a class="dot" style="--x: 76%; --y: 22%;" data-bucket="product" href="#usertesting"><span>UserTesting</span></a>
+        <a class="dot" style="--x: 84%; --y: 30%;" data-bucket="product" href="#maze"><span>Maze / Sprig</span></a>
+        <a class="dot" style="--x: 25%; --y: 70%;" data-bucket="product" href="#browserbase"><span>Browserbase</span></a>
+        <a class="dot" style="--x: 18%; --y: 78%;" data-bucket="product" href="#builder-native"><span>Replit / Lovable / v0</span></a>
+        <a class="dot" style="--x: 37%; --y: 78%;" data-bucket="experimental" href="#webtestbench"><span>WebTestBench</span></a>
+        <a class="dot" style="--x: 40%; --y: 22%;" data-bucket="experimental" href="#perceptui"><span>PerceptUI</span></a>
+        <a class="dot" style="--x: 45%; --y: 36%;" data-bucket="experimental" href="#gpt-click"><span>What Would GPT Click</span></a>
+        <a class="dot" style="--x: 34%; --y: 42%;" data-bucket="experimental" href="#uxbench"><span>UXBench</span></a>
+        <a class="dot" style="--x: 56%; --y: 29%;" data-bucket="process" href="#workflow-validation"><span>Workflow Validation</span></a>
+        <a class="dot" style="--x: 67%; --y: 35%;" data-bucket="process" href="#human-escalation"><span>Human Escalation</span></a>
+        <a class="dot" style="--x: 70%; --y: 66%;" data-bucket="process" href="#safe-launch"><span>Safe Launch</span></a>
+        <a class="dot" style="--x: 45%; --y: 58%;" data-bucket="process" href="#observability"><span>Agent UX Observability</span></a>
+      </div>
+
+      <div class="legend">
+        <span><b style="background: var(--green);"></b>Product</span>
+        <span><b style="background: var(--clay);"></b>Process</span>
+        <span><b style="background: var(--blue);"></b>Experimental approach</span>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Community site plan">
+      <article class="panel">
+        <h3>What the site tracks</h3>
+        <p>Products, research methods, papers, benchmarks, and operating workflows that shape how AI-built apps and agentic experiences get validated.</p>
+      </article>
+      <article class="panel">
+        <h3>Why people return</h3>
+        <p>A short weekly progress note: what launched, what shifted, what got more credible, and what still needs human grounding.</p>
+      </article>
+      <article class="panel">
+        <h3>What makes it useful</h3>
+        <p>Every dot carries a stance: strengths, blind spots, confidence level, and whether it is product, process, or experimental evidence.</p>
+      </article>
+    </section>
+
+    <section aria-labelledby="updates-title">
+      <div class="section-title">
+        <div>
+          <h2 id="updates-title">Weekly Progress</h2>
+          <p>Latest landscape notes from the current research repository.</p>
+        </div>
+      </div>
+      <div class="updates">
+        <article class="update">
+          <time>Week of Jun 26, 2026</time>
+          <h3>Builder platforms move into product ops</h3>
+          <p>Replit, Lovable, and v0 continue adding testing, security, annotation, monitoring, and remediation loops. The map shifts away from “browser testing” as a standalone wedge.</p>
+        </article>
+        <article class="update">
+          <time>Week of Jun 26, 2026</time>
+          <h3>Synthetic UX evidence splits</h3>
+          <p>PerceptUI strengthens the case for persona-conditioned synthetic UX evaluation, while What Would GPT Click and UXBench highlight behavioral and UI-reasoning gaps.</p>
+        </article>
+        <article class="update">
+          <time>Week of Jun 26, 2026</time>
+          <h3>Safe launch becomes part of UX</h3>
+          <p>Vibe-coded app risk is now mainstream enough that trust, privacy, auth, and fragile production behavior should appear in UX validation reports as scoped flags.</p>
+        </article>
+        <article class="update">
+          <time>Open question</time>
+          <h3>What is the calibration boundary?</h3>
+          <p>The site should track when synthetic evidence is useful, when it is misleading, and when human confirmation or expert review becomes mandatory.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="directory-title">
+      <div class="section-title">
+        <div>
+          <h2 id="directory-title">Dot Pages</h2>
+          <p>Each profile captures what the item is, why it matters, and where the blind spots remain.</p>
+        </div>
+      </div>
+
+      <div class="directory">
+        <article class="entry" id="workflow-validation">
+          <h3>Workflow Validation Loop</h3>
+          <div class="meta"><span class="pill">Process</span><span class="pill">Lead wedge</span><span class="pill">High priority</span></div>
+          <p>A structured service that lets an app-building agent submit a workflow, audience, and goal, then receive UX findings, evidence, confidence, and fix guidance.</p>
+          <dl>
+            <dt>Strength</dt><dd>Connects browser action, research judgment, and agent-readable remediation.</dd>
+            <dt>Blind spot</dt><dd>Needs proof that buyers trust calibrated synthetic evidence enough to change what ships.</dd>
+          </dl>
+        </article>
+
+        <article class="entry" id="observability">
+          <h3>Agent UX Observability</h3>
+          <div class="meta"><span class="pill">Process</span><span class="pill">Alternate wedge</span></div>
+          <p>Observe conversations, tool traces, user repairs, trust drops, and flow breakdowns in personal-agent or OpenClaw-style environments.</p>
+          <dl>
+            <dt>Strength</dt><dd>Turns raw agent traces into UX incidents and repair opportunities.</dd>
+            <dt>Blind spot</dt><dd>Privacy, consent, and customer access models need early validation.</dd>
+          </dl>
+        </article>
+
+        <article class="entry" id="uxia">
+          <h3>Uxia</h3>
+          <div class="meta"><span class="pill">Product</span><span class="pill">Synthetic testing</span></div>
+          <p>AI user testing for designs and flows, positioned around fast usability findings, synthetic testers, and accessibility-oriented review.</p>
+          <dl>
+            <dt>Strength</dt><dd>Clear UX framing and speed-versus-traditional-research story.</dd>
+            <dt>Blind spot</dt><dd>Not clearly agent-callable as a continuous build-loop service.</dd>
+          </dl>
+        </article>
+
+        <article class="entry" id="crowdi">
+          <h3>Crowdi</h3>
+          <div class="meta"><span class="pill">Product</span><span class="pill">Synthetic simulation</span></div>
+          <p>Large-scale AI user simulation for uploaded products or staging builds, with friction and bug surfacing before launch.</p>
+          <dl>
+            <dt>Strength</dt><dd>Strong scale language and continuous simulation posture.</dd>
+            <dt>Blind spot</dt><dd>May collapse toward synthetic QA unless human grounding is explicit.</dd>
+          </dl>
+        </article>
+
+        <article class="entry" id="loop11">
+          <h3>Loop11 AI Browser Agents</h3>
+          <div class="meta"><span class="pill">Product</span><span class="pill">Research platform</span></div>
+          <p>AI Browser Agents sit inside an established usability testing workflow and can be compared against human participant results.</p>
+          <dl>
+            <dt>Strength</dt><dd>Good bridge between human usability testing and AI participants.</dd>
+            <dt>Blind spot</dt><dd>Still optimized for human study owners rather than autonomous app-building agents.</dd>
+          </dl>
+        </article>
+
+        <article class="entry" id="jina">
+          <h3>Jina Synthetic Users</h3>
+          <div class="meta"><span class="pill">Product</span><span class="pill">Agent exploration</span></div>
+          <p>A lightweight synthetic-user approach where agents explore an app and generate feedback or exploration reports.</p>
+          <dl>
+            <dt>Strength</dt><dd>Close to the AI-first buyer mental model.</dd>
+            <dt>Blind spot</dt><dd>Early surface; needs stronger longitudinal evidence and calibration.</dd>
+          </dl>
+        </article>
+
+        <article class="entry" id="usertesting">
+          <h3>UserTesting</h3>
+          <div class="meta"><span class="pill">Product</span><span class="pill">Human evidence</span></div>
+          <p>Enterprise human-insight platform with participant feedback, video, transcripts, AI summaries, and research repositories.</p>
+          <dl>
+            <dt>Strength</dt><dd>High-trust evidence from real humans.</dd>
+            <dt>Blind spot</dt><dd>Slower and dashboard-first, not designed as an agent-callable validation API.</dd>
+          </dl>
+        </article>
+
+        <article class="entry" id="maze">
+          <h3>Maze / Sprig / Userlytics</h3>
+          <div class="meta"><span class="pill">Product</span><span class="pill">AI-assisted research</span></div>
+          <p>Human research and feedback platforms increasingly using AI for summaries, themes, annotations, and report generation.</p>
+          <dl>
+            <dt>Strength</dt><dd>Human-grounded evidence with faster synthesis.</dd>
+            <dt>Blind spot</dt><dd>Less suited to machine-readable feedback loops for coding agents.</dd>
+          </dl>
+        </article>
+
+        <article class="entry" id="browserbase">
+          <h3>Browserbase / Stagehand</h3>
+          <div class="meta"><span class="pill">Product</span><span class="pill">Browser infra</span></div>
+          <p>Cloud browser and AI-native browser automation primitives for teams building agents, verifiers, and browser-based workflows.</p>
+          <dl>
+            <dt>Strength</dt><dd>Excellent execution layer for real browser trajectories.</dd>
+            <dt>Blind spot</dt><dd>Does not itself decide what research question to ask or how to synthesize UX meaning.</dd>
+          </dl>
+        </article>
+
+        <article class="entry" id="builder-native">
+          <h3>Replit / Lovable / v0</h3>
+          <div class="meta"><span class="pill">Product</span><span class="pill">Builder-native ops</span></div>
+          <p>AI app builders are adding testing, monitoring, security, annotations, deployment, and remediation directly into the creation loop.</p>
+          <dl>
+            <dt>Strength</dt><dd>Already in the build context where feedback is actionable.</dd>
+            <dt>Blind spot</dt><dd>Platform-specific and often closer to QA, security, and logs than neutral UX diagnosis.</dd>
+          </dl>
+        </article>
+
+        <article class="entry" id="perceptui">
+          <h3>PerceptUI</h3>
+          <div class="meta"><span class="pill">Experimental</span><span class="pill">Synthetic UX</span></div>
+          <p>A research approach for persona-conditioned synthetic UI/UX response prediction, pointing toward more context-aware synthetic evaluators.</p>
+          <dl>
+            <dt>Strength</dt><dd>Raises the ceiling for synthetic research methods.</dd>
+            <dt>Blind spot</dt><dd>Must be presented with calibration and not treated as universal human replacement.</dd>
+          </dl>
+        </article>
+
+        <article class="entry" id="gpt-click">
+          <h3>What Would GPT Click</h3>
+          <div class="meta"><span class="pill">Experimental</span><span class="pill">Calibration warning</span></div>
+          <p>A first-click research signal showing that GPT-predicted click distributions can diverge substantially from real users.</p>
+          <dl>
+            <dt>Strength</dt><dd>Useful falsifier against overconfident synthetic-user claims.</dd>
+            <dt>Blind spot</dt><dd>Does not mean all synthetic UX is useless; it clarifies where validation is needed.</dd>
+          </dl>
+        </article>
+
+        <article class="entry" id="uxbench">
+          <h3>UXBench / UI-UX</h3>
+          <div class="meta"><span class="pill">Experimental</span><span class="pill">UI reasoning</span></div>
+          <p>Benchmark direction for testing multimodal model reasoning about layout, hierarchy, consistency, and interface structure.</p>
+          <dl>
+            <dt>Strength</dt><dd>Grounds why screenshot-only UX diagnosis needs confidence labels.</dd>
+            <dt>Blind spot</dt><dd>Benchmarks model capability, not complete product research practice.</dd>
+          </dl>
+        </article>
+
+        <article class="entry" id="webtestbench">
+          <h3>WebTestBench / OpenComputer</h3>
+          <div class="meta"><span class="pill">Experimental</span><span class="pill">Browser-agent evals</span></div>
+          <p>Benchmarks and evaluation methods for computer-use and browser agents completing tasks in real web environments.</p>
+          <dl>
+            <dt>Strength</dt><dd>Shows task-success verification is becoming serious infrastructure.</dd>
+            <dt>Blind spot</dt><dd>Task success is not the same as human usability, trust, or product judgment.</dd>
+          </dl>
+        </article>
+
+        <article class="entry" id="human-escalation">
+          <h3>Human Escalation Brokerage</h3>
+          <div class="meta"><span class="pill">Process</span><span class="pill">Trust layer</span></div>
+          <p>A workflow where low-confidence synthetic or browser-agent findings are routed to human participants, experts, or researchers for confirmation.</p>
+          <dl>
+            <dt>Strength</dt><dd>Improves trust without making every iteration a full research study.</dd>
+            <dt>Blind spot</dt><dd>Could collapse into services if not tightly scoped.</dd>
+          </dl>
+        </article>
+
+        <article class="entry" id="safe-launch">
+          <h3>Safe-Launch Review</h3>
+          <div class="meta"><span class="pill">Process</span><span class="pill">Trust and risk</span></div>
+          <p>A lightweight report section that flags confusing auth, privacy surprises, fragile data handling, exposure risk, and other trust-eroding issues.</p>
+          <dl>
+            <dt>Strength</dt><dd>Matches the reality that users experience security and fragility as poor UX.</dd>
+            <dt>Blind spot</dt><dd>Must not pretend to replace full security review or penetration testing.</dd>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="sources-title">
+      <div class="section-title">
+        <div>
+          <h2 id="sources-title">Research Trail</h2>
+          <p>This page is a public surface for a living research repo. The underlying notes keep the evidence labels, confidence levels, and open questions visible.</p>
+        </div>
+      </div>
+      <div class="source-list">
+        <a href="./divergence-market-map.md">
+          <strong>Market Map</strong>
+          <span>Competitors, substitutes, adjacent platforms, and June 2026 market movement.</span>
+        </a>
+        <a href="./market-options-may-2026.md">
+          <strong>Options Today</strong>
+          <span>What AI-first companies can use now for user testing and validation.</span>
+        </a>
+        <a href="./wedge-options.md">
+          <strong>Wedge Options</strong>
+          <span>Product wedges, scoring, risks, and the lead recommendation logic.</span>
+        </a>
+        <a href="./agent-ux-observability.md">
+          <strong>Agent UX Observability</strong>
+          <span>Alternate direction around incidents, traces, user repair, and trust drops.</span>
+        </a>
+        <a href="./problem-space-taxonomy.md">
+          <strong>Problem Taxonomy</strong>
+          <span>The UX problem categories this landscape is trying to make legible.</span>
+        </a>
+        <a href="./open-questions.md">
+          <strong>Open Questions</strong>
+          <span>Unknowns worth killing quickly, including calibration and safe-launch scope.</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    AIUXResearch is an open landscape tracker for AI agent UX research. Built from the research notes in this repository.
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll(".filter-button");
+    const dots = document.querySelectorAll(".dot");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        buttons.forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+        dots.forEach((dot) => {
+          dot.classList.toggle("is-dimmed", filter !== "all" && dot.dataset.bucket !== filter);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
