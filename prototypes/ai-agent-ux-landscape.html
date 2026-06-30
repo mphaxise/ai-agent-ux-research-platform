@@ -45,11 +45,7 @@
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
-      padding: 28px 0 28px;
-      align-items: end;
+      padding: 42px 0 24px;
     }
 
     .topbar {
@@ -94,22 +90,8 @@
       color: var(--green);
     }
 
-    .eyebrow {
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-      padding: 7px 11px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--green);
-      background: rgba(255, 252, 244, 0.58);
-      font: 700 12px/1.2 ui-sans-serif, system-ui, sans-serif;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
     h1 {
-      margin: 22px 0 18px;
+      margin: 0 0 18px;
       font-size: clamp(44px, 7vw, 92px);
       line-height: 0.88;
       letter-spacing: -0.07em;
@@ -124,26 +106,10 @@
       line-height: 1.35;
     }
 
-    .brief {
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      background: var(--panel);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
-    }
-
-    .brief h2,
     .section-title h2 {
       margin: 0;
       font-size: 24px;
       letter-spacing: -0.03em;
-    }
-
-    .brief p {
-      margin: 14px 0 0;
-      color: var(--muted);
-      line-height: 1.55;
     }
 
     .chips {
@@ -198,6 +164,14 @@
       margin: 8px 0 0;
       color: var(--muted);
       line-height: 1.45;
+    }
+
+    .map-meta {
+      margin: 8px 0 0;
+      color: var(--green);
+      font: 800 12px/1.35 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .map-scroll {
@@ -406,48 +380,33 @@
 
     .viewpoints {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-bottom: 28px;
+      gap: 12px;
+      margin: 0;
+      padding-left: 22px;
+      list-style: disc;
     }
 
     .viewpoint {
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: rgba(255, 252, 244, 0.7);
-      box-shadow: 0 12px 34px rgba(52, 42, 30, 0.08);
+      padding: 0 0 12px 18px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      line-height: 1.5;
     }
 
     .viewpoint h3 {
-      margin: 0 0 10px;
-      font-size: 20px;
+      margin: 0 0 4px;
+      font-size: 18px;
       letter-spacing: -0.03em;
     }
 
-    .viewpoint dl {
-      display: grid;
-      grid-template-columns: 96px 1fr;
-      gap: 8px 12px;
-      margin: 0;
-    }
-
-    .viewpoint dt {
-      color: var(--muted);
-      font: 800 11px/1.35 ui-sans-serif, system-ui, sans-serif;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .viewpoint dd {
-      margin: 0;
-      color: var(--ink);
-      line-height: 1.45;
-    }
-
-    .viewpoint a {
+    .viewpoint::marker {
       color: var(--green);
-      overflow-wrap: anywhere;
+    }
+
+    .viewpoint a,
+    .viewpoint time {
+      color: var(--green);
+      font: 800 12px/1.35 ui-sans-serif, system-ui, sans-serif;
       text-decoration-thickness: 1px;
       text-underline-offset: 3px;
     }
@@ -643,26 +602,15 @@
     <nav class="nav" aria-label="Page sections">
       <a href="#map-title">Landscape</a>
       <a href="#updates-title">Monthly Update</a>
-      <a href="#viewpoints-title">Viewpoints</a>
       <a href="#directory-title">Field Notes</a>
+      <a href="#viewpoints-title">Viewpoints</a>
     </nav>
   </header>
 
   <main class="shell">
     <section class="hero">
-      <div>
-        <div class="eyebrow">Monthly UX validation landscape</div>
-        <h1>AI Agent UX Research Landscape</h1>
-        <p class="lede">A working map of products, workflows, papers, benchmarks, and experimental approaches exploring how AI agents validate what they build.</p>
-      </div>
-      <aside class="brief">
-        <h2>Current State</h2>
-        <p>Browser QA, task completion, screenshots, evals, accessibility checks, and UAT-style flows are becoming part of AI app-building infrastructure.</p>
-        <p>Current approaches can surface obvious bugs and heuristic issues. Researchers and product teams are also exploring model-based probes, human behavior modeling, and hybrid human review to understand where automated signals are useful.</p>
-        <div class="chips">
-          <span class="chip">Updated: Jun 30, 2026</span>
-        </div>
-      </aside>
+      <h1>AI Agent UX Research Landscape</h1>
+      <p class="lede">A working map of products, workflows, papers, benchmarks, and experimental approaches exploring how AI agents validate what they build.</p>
     </section>
 
     <section class="map-card" aria-labelledby="map-title">
@@ -670,6 +618,7 @@
         <div>
           <h2 id="map-title">Landscape Map</h2>
           <p>Dots are placed by evidence source and workflow depth. Click a dot to jump to its summary. On mobile, swipe the map horizontally.</p>
+          <p class="map-meta">Last updated June 30, 2026</p>
         </div>
         <div class="chips" aria-label="Filter dots by bucket">
           <button class="filter-button active" data-filter="all">All</button>
@@ -721,7 +670,6 @@
       <div class="section-title">
         <div>
           <h2 id="updates-title">Monthly Landscape Update</h2>
-          <p>The website updates monthly from weekly research notes. Current edition separates observed market movement from unresolved hypotheses.</p>
         </div>
       </div>
       <div class="updates">
@@ -738,71 +686,12 @@
         <article class="update">
           <time>Open hypothesis</time>
           <h3>What can automated validation reliably see?</h3>
-          <p>Task completion, screenshots, and browser traces can reveal some classes of friction. A live research question is how these signals relate to confusion, mistrust, accessibility, recoverability, and product-fit concerns.</p>
+          <p>Task completion, screenshots, and browser traces can reveal some classes of friction. A live research question is whether these signals can indicate confusion, mistrust, accessibility, recoverability, or product-fit concerns.</p>
         </article>
         <article class="update">
           <time>Open hypothesis</time>
           <h3>Can human behavior modeling help?</h3>
-          <p>Human behavior modeling may improve agent-based validation when calibrated against real behavior. The research question is which behaviors are proxy-friendly and where direct user evidence remains necessary. <a href="https://github.com/mphaxise/ai-agent-ux-research-platform/blob/main/docs/human-behavior-modeling-for-agent-ux.md">Read the research note.</a></p>
-        </article>
-      </div>
-    </section>
-
-    <section aria-labelledby="viewpoints-title">
-      <div class="section-title">
-        <div>
-          <h2 id="viewpoints-title">Viewpoints</h2>
-          <p>A lightweight source log for claims shaping the landscape. Each record stays intentionally small: source title, URL, date, and claim summary.</p>
-        </div>
-      </div>
-      <div class="viewpoints">
-        <article class="viewpoint">
-          <h3>What Would GPT Click</h3>
-          <dl>
-            <dt>URL</dt><dd><a href="https://arxiv.org/abs/2605.18302">https://arxiv.org/abs/2605.18302</a></dd>
-            <dt>Date</dt><dd>May 19, 2026</dd>
-            <dt>Claim</dt><dd>GPT-predicted first-click behavior can diverge from real user click distributions, making calibration important for synthetic participant claims.</dd>
-          </dl>
-        </article>
-        <article class="viewpoint">
-          <h3>The Largest Review of Synthetic Participants Ever Conducted</h3>
-          <dl>
-            <dt>URL</dt><dd><a href="https://www.thevoiceofuser.com/the-largest-review-of-synthetic-participants-ever-conducted-found-exactly-what-youd-expect-synthetic-users-dont-work/">https://www.thevoiceofuser.com/the-largest-review-of-synthetic-participants-ever-conducted-found-exactly-what-youd-expect-synthetic-users-dont-work/</a></dd>
-            <dt>Date</dt><dd>March 28, 2026</dd>
-            <dt>Claim</dt><dd>Critiques synthetic participants as unreliable for UX research and argues that systematic review evidence does not support treating them as user substitutes.</dd>
-          </dl>
-        </article>
-        <article class="viewpoint">
-          <h3>Synthetic Participants Generated by Large Language Models: A Systematic Literature Review</h3>
-          <dl>
-            <dt>URL</dt><dd><a href="https://storage.ghost.io/c/13/75/1375db81-cd4e-4555-bb92-4438a626256b/content/files/2026/03/synthetic_participants_generated_by_large_language_models_a_systematic_literature_review.pdf">https://storage.ghost.io/c/13/75/1375db81-cd4e-4555-bb92-4438a626256b/content/files/2026/03/synthetic_participants_generated_by_large_language_models_a_systematic_literature_review.pdf</a></dd>
-            <dt>Date</dt><dd>March 28, 2026</dd>
-            <dt>Claim</dt><dd>Systematic review source behind the critique; useful as primary evidence for tracking what synthetic-participant studies claim, measure, and leave unresolved.</dd>
-          </dl>
-        </article>
-        <article class="viewpoint">
-          <h3>PerceptUI</h3>
-          <dl>
-            <dt>URL</dt><dd><a href="https://arxiv.org/abs/2606.05697">https://arxiv.org/abs/2606.05697</a></dd>
-            <dt>Date</dt><dd>June 5, 2026</dd>
-            <dt>Claim</dt><dd>Persona-conditioned models may improve UI/UX response prediction, suggesting model-based probes could become more context-aware.</dd>
-          </dl>
-        </article>
-        <article class="viewpoint">
-          <h3>Reasoning for Mobile User Experience with Multimodal LLMs</h3>
-          <dl>
-            <dt>URL</dt><dd><a href="https://arxiv.org/abs/2606.13192">https://arxiv.org/abs/2606.13192</a></dd>
-            <dt>Date</dt><dd>June 12, 2026</dd>
-            <dt>Claim</dt><dd>Multimodal UI reasoning benchmarks can help test whether models understand layout, hierarchy, and usability-relevant interface structure.</dd>
-          </dl>
-        </article>
-        <article class="viewpoint">
-          <h3>Generative Agents: Interactive Simulacra of Human Behavior</h3>
-          <dl>
-            <dt>URL</dt><dd><a href="https://arxiv.org/abs/2304.03442">https://arxiv.org/abs/2304.03442</a></dd>
-            <dt>Date</dt><dd>April 7, 2023</dd>
-            <dt>Claim</dt><dd>LLM-based agents can simulate believable behavior in constrained environments, creating a foundation for later human-behavior modeling work.</dd>
-          </dl>
+          <p>Human behavior modeling is an early research area adjacent to agent-based validation. The research question is where current surveys and studies indicate the field is heading, which behaviors are proxy-friendly, and where direct user evidence remains necessary. <a href="https://github.com/mphaxise/ai-agent-ux-research-platform/blob/main/docs/human-behavior-modeling-for-agent-ux.md">Current research survey.</a></p>
         </article>
       </div>
     </section>
@@ -819,32 +708,32 @@
         <article class="entry" id="workflow-validation">
           <h3>Workflow Validation Loop</h3>
           <div class="meta"><span class="pill">Workflow</span><span class="pill">Lead wedge</span><span class="pill">High priority</span></div>
-          <p>A structured service that lets an app-building agent submit a workflow, audience, and goal, then receive UX findings, evidence, confidence, and fix guidance.</p>
+          <p>A workflow pattern where an app-building agent or product team defines a task, runs it through browser testing or research tooling, and reviews the resulting completion evidence.</p>
           <dl>
-            <dt>Strength</dt><dd>Connects browser action, research judgment, and agent-readable remediation.</dd>
-            <dt>Blind spot</dt><dd>Needs proof that buyers trust calibrated synthetic evidence enough to change what ships.</dd>
+            <dt>Visible signal</dt><dd>Browserbase, Lovable, Loop11, and UserTesting each show parts of this pattern: browser execution, task testing, AI browser agents, or human participant evidence.</dd>
+            <dt>Open question</dt><dd>The sources do not yet show a standard agent-facing UX validation service contract.</dd>
           </dl>
-          <div class="entry-links">Sources: <a href="./workflow-validation-thesis.md">Workflow thesis</a><a href="https://www.browserbase.com/evaluations">Browserbase Evaluations</a><a href="https://docs.lovable.dev/features/browser-testing">Lovable browser testing</a></div>
+          <div class="entry-links">Sources: <a href="https://www.browserbase.com/evaluations">Browserbase Evaluations</a><a href="https://docs.lovable.dev/features/browser-testing">Lovable browser testing</a><a href="https://www.loop11.com/features/ai-browser-agents/">Loop11 AI Browser Agents</a><a href="https://www.usertesting.com/platform/enjoyhq">UserTesting</a></div>
         </article>
 
         <article class="entry" id="observability">
           <h3>Agent UX Observability</h3>
           <div class="meta"><span class="pill">Workflow</span><span class="pill">Alternate wedge</span></div>
-          <p>Observe conversations, tool traces, user repairs, trust drops, and flow breakdowns in personal-agent or OpenClaw-style environments.</p>
+          <p>A workflow area that combines product/session analytics, agent traces, and plugin or gateway environments to inspect how agent-mediated interactions unfold.</p>
           <dl>
-            <dt>Strength</dt><dd>Turns raw agent traces into UX incidents and repair opportunities.</dd>
-            <dt>Blind spot</dt><dd>Privacy, consent, and customer access models need early validation.</dd>
+            <dt>Visible signal</dt><dd>Session replay and analytics tools already capture user struggle signals; agent platforms expose traces, plugins, or gateway surfaces.</dd>
+            <dt>Open question</dt><dd>It is still unclear which consent, privacy, and summarization patterns are acceptable for observing agent-user conversations.</dd>
           </dl>
-          <div class="entry-links">Sources: <a href="./agent-ux-observability.md">Observability note</a><a href="./openclaw-service-landscape.md">OpenClaw landscape</a><a href="https://docs.openclaw.ai/plugins/sdk-overview">OpenClaw Plugin SDK</a></div>
+          <div class="entry-links">Sources: <a href="https://docs.openclaw.ai/plugins/sdk-overview">OpenClaw Plugin SDK</a><a href="https://logrocket.com/">LogRocket</a><a href="https://www.fullstory.com/">Fullstory</a></div>
         </article>
 
         <article class="entry" id="uxia">
           <h3>Uxia</h3>
           <div class="meta"><span class="pill">Product</span><span class="pill">Synthetic testing</span></div>
-          <p>AI user testing for designs and flows, positioned around fast usability findings, synthetic testers, and accessibility-oriented review.</p>
+          <p>Product page positions Uxia around AI user testing for designs and flows, synthetic testers, fast usability findings, and accessibility-oriented review.</p>
           <dl>
-            <dt>Strength</dt><dd>Clear UX framing and speed-versus-traditional-research story.</dd>
-            <dt>Blind spot</dt><dd>Not clearly agent-callable as a continuous build-loop service.</dd>
+            <dt>Visible signal</dt><dd>The product explicitly compares synthetic and human testing and presents synthetic testers as a faster research path.</dd>
+            <dt>Open question</dt><dd>The public surface does not make clear whether this is intended for autonomous app-building agents or human study owners.</dd>
           </dl>
           <div class="entry-links">Sources: <a href="https://www.uxia.app/">Product site</a><a href="https://www.uxia.app/synthetic-vs-human">Synthetic vs human</a></div>
         </article>
@@ -852,10 +741,10 @@
         <article class="entry" id="crowdi">
           <h3>Crowdi</h3>
           <div class="meta"><span class="pill">Product</span><span class="pill">Synthetic simulation</span></div>
-          <p>Large-scale AI user simulation for uploaded products or staging builds, with friction and bug surfacing before launch.</p>
+          <p>Product page positions Crowdi around large-scale AI user simulation for uploaded products or staging builds.</p>
           <dl>
-            <dt>Strength</dt><dd>Strong scale language and continuous simulation posture.</dd>
-            <dt>Blind spot</dt><dd>May collapse toward synthetic QA unless human grounding is explicit.</dd>
+            <dt>Visible signal</dt><dd>The pitch emphasizes many AI users, friction discovery, bug surfacing, and pre-launch feedback.</dd>
+            <dt>Open question</dt><dd>The public page does not show how findings are calibrated against human participant evidence.</dd>
           </dl>
           <div class="entry-links">Sources: <a href="https://www.crowdi.org/">Product site</a></div>
         </article>
@@ -865,8 +754,8 @@
           <div class="meta"><span class="pill">Product</span><span class="pill">Research platform</span></div>
           <p>AI Browser Agents sit inside an established usability testing workflow and can be compared against human participant results.</p>
           <dl>
-            <dt>Strength</dt><dd>Good bridge between human usability testing and AI participants.</dd>
-            <dt>Blind spot</dt><dd>Still optimized for human study owners rather than autonomous app-building agents.</dd>
+            <dt>Visible signal</dt><dd>Loop11 frames AI Browser Agents inside usability testing rather than generic QA automation.</dd>
+            <dt>Open question</dt><dd>The public workflow appears designed for study setup and analysis by people, not autonomous agent-to-agent validation.</dd>
           </dl>
           <div class="entry-links">Sources: <a href="https://www.loop11.com/">Product site</a><a href="https://www.loop11.com/features/ai-browser-agents/">AI Browser Agents</a></div>
         </article>
@@ -874,10 +763,10 @@
         <article class="entry" id="jina">
           <h3>Jina Synthetic Users</h3>
           <div class="meta"><span class="pill">Product</span><span class="pill">Agent exploration</span></div>
-          <p>A lightweight synthetic-user approach where agents explore an app and generate feedback or exploration reports.</p>
+          <p>Product page presents a lightweight synthetic-user flow where agents explore an app and generate feedback.</p>
           <dl>
-            <dt>Strength</dt><dd>Close to the AI-first buyer mental model.</dd>
-            <dt>Blind spot</dt><dd>Early surface; needs stronger longitudinal evidence and calibration.</dd>
+            <dt>Visible signal</dt><dd>The interface is close to agent exploration rather than a traditional moderated study setup.</dd>
+            <dt>Open question</dt><dd>The public page does not show longitudinal validity evidence or comparison against human sessions.</dd>
           </dl>
           <div class="entry-links">Sources: <a href="https://synthetic.usejina.com/">Product site</a></div>
         </article>
@@ -887,8 +776,8 @@
           <div class="meta"><span class="pill">Product</span><span class="pill">Human evidence</span></div>
           <p>Enterprise human-insight platform with participant feedback, video, transcripts, AI summaries, and research repositories.</p>
           <dl>
-            <dt>Strength</dt><dd>High-trust evidence from real humans.</dd>
-            <dt>Blind spot</dt><dd>Slower and dashboard-first, not designed as an agent-callable validation API.</dd>
+            <dt>Visible signal</dt><dd>UserTesting centers human participant evidence and supports AI-assisted analysis and repository workflows.</dd>
+            <dt>Open question</dt><dd>The public product is a research platform, not an agent-callable validation API.</dd>
           </dl>
           <div class="entry-links">Sources: <a href="https://www.usertesting.com/platform/enjoyhq">Platform</a><a href="https://help.usertesting.com/hc/en-us/articles/13268801005469-UserTesting-and-Artificial-Intelligence">AI docs</a></div>
         </article>
@@ -898,8 +787,8 @@
           <div class="meta"><span class="pill">Product</span><span class="pill">AI-assisted research</span></div>
           <p>Human research and feedback platforms increasingly using AI for summaries, themes, annotations, and report generation.</p>
           <dl>
-            <dt>Strength</dt><dd>Human-grounded evidence with faster synthesis.</dd>
-            <dt>Blind spot</dt><dd>Less suited to machine-readable feedback loops for coding agents.</dd>
+            <dt>Visible signal</dt><dd>These platforms publish research, feedback, and AI-assist features around human research workflows.</dd>
+            <dt>Open question</dt><dd>The public positioning is still dashboard and researcher oriented rather than coding-agent oriented.</dd>
           </dl>
           <div class="entry-links">Sources: <a href="https://maze.co/resources/user-research-report/">Maze report</a><a href="https://sprig.com/ux-researcher-tools">Sprig</a><a href="https://www.userlytics.com/resources/news/userlytics-delivers-major-platform-releases-in-early-2026-advancing-ai-driven-ux-research/">Userlytics</a></div>
         </article>
@@ -907,10 +796,10 @@
         <article class="entry" id="browserbase">
           <h3>Browserbase / Stagehand</h3>
           <div class="meta"><span class="pill">Product</span><span class="pill">Browser infra</span></div>
-          <p>Cloud browser and AI-native browser automation primitives for teams building agents, verifiers, and browser-based workflows.</p>
+          <p>Browserbase and Stagehand provide cloud browser and browser-automation primitives for AI agents and web workflows.</p>
           <dl>
-            <dt>Strength</dt><dd>Excellent execution layer for real browser trajectories.</dd>
-            <dt>Blind spot</dt><dd>Does not itself decide what research question to ask or how to synthesize UX meaning.</dd>
+            <dt>Visible signal</dt><dd>Browserbase publishes evaluation and verifier material for computer-use agents, and Stagehand exposes browser automation primitives.</dd>
+            <dt>Open question</dt><dd>This infrastructure verifies actions and outcomes; UX interpretation remains a separate layer.</dd>
           </dl>
           <div class="entry-links">Sources: <a href="https://www.browserbase.com/">Browserbase</a><a href="https://www.stagehand.dev/">Stagehand</a><a href="https://www.browserbase.com/blog/building-verifiers-for-computer-use-agents">Universal Verifier</a></div>
         </article>
@@ -918,10 +807,10 @@
         <article class="entry" id="builder-native">
           <h3>Replit / Lovable / v0</h3>
           <div class="meta"><span class="pill">Product</span><span class="pill">Builder-native ops</span></div>
-          <p>AI app builders are adding testing, monitoring, security, annotations, deployment, and remediation directly into the creation loop.</p>
+          <p>AI app builders are adding testing, deployment, security, annotations, and remediation features inside the creation loop.</p>
           <dl>
-            <dt>Strength</dt><dd>Already in the build context where feedback is actionable.</dd>
-            <dt>Blind spot</dt><dd>Platform-specific and often closer to QA, security, and logs than neutral UX diagnosis.</dd>
+            <dt>Visible signal</dt><dd>Lovable documents browser testing, Replit markets agentic app creation, and v0 sits in the AI UI/app generation category.</dd>
+            <dt>Open question</dt><dd>These native tools appear closer to build, QA, and deployment workflows than independent UX research evidence.</dd>
           </dl>
           <div class="entry-links">Sources: <a href="https://replit.com/ai">Replit Agent</a><a href="https://lovable.dev/">Lovable</a><a href="https://v0.dev/">v0</a><a href="https://docs.lovable.dev/changelog?page=1">Lovable changelog</a></div>
         </article>
@@ -929,10 +818,10 @@
         <article class="entry" id="perceptui">
           <h3>PerceptUI</h3>
           <div class="meta"><span class="pill">Experimental</span><span class="pill">Synthetic UX</span></div>
-          <p>A research approach for persona-conditioned synthetic UI/UX response prediction, pointing toward more context-aware synthetic evaluators.</p>
+          <p>Paper proposing persona-conditioned synthetic UI/UX response prediction.</p>
           <dl>
-            <dt>Strength</dt><dd>Raises the ceiling for synthetic research methods.</dd>
-            <dt>Blind spot</dt><dd>Must be presented with calibration and not treated as universal human replacement.</dd>
+            <dt>Visible signal</dt><dd>The paper is relevant to model-based probes because it focuses on persona-conditioned UI/UX responses.</dd>
+            <dt>Open question</dt><dd>The broader product question is how these outputs compare with real behavior across live product contexts.</dd>
           </dl>
           <div class="entry-links">Sources: <a href="https://arxiv.org/abs/2606.05697">Paper</a></div>
         </article>
@@ -942,8 +831,8 @@
           <div class="meta"><span class="pill">Experimental</span><span class="pill">Calibration warning</span></div>
           <p>A first-click research signal showing that GPT-predicted click distributions can diverge substantially from real users.</p>
           <dl>
-            <dt>Strength</dt><dd>Useful falsifier against overconfident synthetic-user claims.</dd>
-            <dt>Blind spot</dt><dd>Does not mean all synthetic UX is useless; it clarifies where validation is needed.</dd>
+            <dt>Visible signal</dt><dd>The paper directly compares GPT-predicted clicks with human first-click behavior.</dd>
+            <dt>Open question</dt><dd>The result raises calibration questions for any product that presents model behavior as participant-like evidence.</dd>
           </dl>
           <div class="entry-links">Sources: <a href="https://arxiv.org/abs/2605.18302">Paper</a></div>
         </article>
@@ -953,8 +842,8 @@
           <div class="meta"><span class="pill">Experimental</span><span class="pill">UI reasoning</span></div>
           <p>Benchmark direction for testing multimodal model reasoning about layout, hierarchy, consistency, and interface structure.</p>
           <dl>
-            <dt>Strength</dt><dd>Grounds why screenshot-only UX diagnosis needs confidence labels.</dd>
-            <dt>Blind spot</dt><dd>Benchmarks model capability, not complete product research practice.</dd>
+            <dt>Visible signal</dt><dd>The benchmark focuses on whether multimodal models can reason about mobile UI/UX tasks.</dd>
+            <dt>Open question</dt><dd>Benchmark performance is not the same as validated UX research in deployed products.</dd>
           </dl>
           <div class="entry-links">Sources: <a href="https://arxiv.org/abs/2606.13192">Paper</a></div>
         </article>
@@ -964,8 +853,8 @@
           <div class="meta"><span class="pill">Experimental</span><span class="pill">Browser-agent evals</span></div>
           <p>Benchmarks and evaluation methods for computer-use and browser agents completing tasks in real web environments.</p>
           <dl>
-            <dt>Strength</dt><dd>Shows task-success verification is becoming serious infrastructure.</dd>
-            <dt>Blind spot</dt><dd>Task success is not the same as human usability, trust, or product judgment.</dd>
+            <dt>Visible signal</dt><dd>These sources measure agent performance on web or computer-use tasks.</dd>
+            <dt>Open question</dt><dd>Their scope is task execution; user comprehension, trust, and desirability require additional evidence.</dd>
           </dl>
           <div class="entry-links">Sources: <a href="https://arxiv.org/abs/2603.25226">WebTestBench</a><a href="https://arxiv.org/abs/2605.19769">OpenComputer</a></div>
         </article>
@@ -973,12 +862,12 @@
         <article class="entry" id="human-review">
           <h3>Human Review Handoff</h3>
           <div class="meta"><span class="pill">Workflow</span><span class="pill">Trust layer</span></div>
-          <p>A workflow where low-confidence synthetic or browser-agent findings are routed to human participants, experts, or researchers for confirmation.</p>
+          <p>A workflow pattern where model-based or browser-agent findings are compared with human participants, expert review, or established research platforms.</p>
           <dl>
-            <dt>Strength</dt><dd>Improves trust without making every iteration a full research study.</dd>
-            <dt>Blind spot</dt><dd>Could collapse into services if not tightly scoped.</dd>
+            <dt>Visible signal</dt><dd>Loop11 discusses AI browser agents in a usability-testing context, and UserTesting provides human participant evidence and research repositories.</dd>
+            <dt>Open question</dt><dd>The operational trigger for when automated signals require human confirmation is not standardized.</dd>
           </dl>
-          <div class="entry-links">Sources: <a href="./next-validation-sprint.md">Validation sprint</a><a href="https://www.loop11.com/features/ai-browser-agents/">Loop11 comparison pattern</a><a href="https://www.usertesting.com/platform/enjoyhq">UserTesting</a></div>
+          <div class="entry-links">Sources: <a href="https://www.loop11.com/features/ai-browser-agents/">Loop11 AI Browser Agents</a><a href="https://www.usertesting.com/platform/enjoyhq">UserTesting</a><a href="https://maze.co/resources/user-research-report/">Maze report</a></div>
         </article>
 
         <article class="entry" id="launch-readiness">
@@ -986,12 +875,28 @@
           <div class="meta"><span class="pill">Workflow</span><span class="pill">Trust and risk</span></div>
           <p>A lightweight report section that flags confusing auth, privacy surprises, fragile data handling, exposure risk, and other trust-eroding issues.</p>
           <dl>
-            <dt>Strength</dt><dd>Matches the reality that users experience security and fragility as poor UX.</dd>
-            <dt>Blind spot</dt><dd>Must not pretend to replace full security review or penetration testing.</dd>
+            <dt>Visible signal</dt><dd>Recent coverage and security research discuss risks in fast AI-generated app deployment and vibe-coding workflows.</dd>
+            <dt>Open question</dt><dd>The boundary between UX readiness, security review, and compliance review needs clear labeling.</dd>
           </dl>
           <div class="entry-links">Sources: <a href="https://www.techradar.com/pro/vibe-coding-guide-how-to-transition-from-ai-generation-to-live-deployment">TechRadar guide</a><a href="https://www.theverge.com/ai-artificial-intelligence/950844/vibe-coding-security-risks-apps">The Verge</a><a href="https://arxiv.org/abs/2606.23130">Security paper</a></div>
         </article>
       </div>
+    </section>
+
+    <section aria-labelledby="viewpoints-title">
+      <div class="section-title">
+        <div>
+          <h2 id="viewpoints-title">Viewpoints</h2>
+        </div>
+      </div>
+      <ul class="viewpoints">
+        <li class="viewpoint"><h3>What Would GPT Click</h3><a href="https://arxiv.org/abs/2605.18302">https://arxiv.org/abs/2605.18302</a> · <time datetime="2026-05-19">May 19, 2026</time> · GPT-predicted first-click behavior can diverge from real user click distributions, making calibration important for synthetic participant claims.</li>
+        <li class="viewpoint"><h3>The Largest Review of Synthetic Participants Ever Conducted</h3><a href="https://www.thevoiceofuser.com/the-largest-review-of-synthetic-participants-ever-conducted-found-exactly-what-youd-expect-synthetic-users-dont-work/">https://www.thevoiceofuser.com/the-largest-review-of-synthetic-participants-ever-conducted-found-exactly-what-youd-expect-synthetic-users-dont-work/</a> · <time datetime="2026-03-28">March 28, 2026</time> · Critiques synthetic participants as unreliable for UX research and argues that systematic review evidence does not support treating them as user substitutes.</li>
+        <li class="viewpoint"><h3>Synthetic Participants Generated by Large Language Models: A Systematic Literature Review</h3><a href="https://storage.ghost.io/c/13/75/1375db81-cd4e-4555-bb92-4438a626256b/content/files/2026/03/synthetic_participants_generated_by_large_language_models_a_systematic_literature_review.pdf">https://storage.ghost.io/c/13/75/1375db81-cd4e-4555-bb92-4438a626256b/content/files/2026/03/synthetic_participants_generated_by_large_language_models_a_systematic_literature_review.pdf</a> · <time datetime="2026-03-28">March 28, 2026</time> · Systematic review source behind the critique; useful as primary evidence for tracking what synthetic-participant studies claim, measure, and leave unresolved.</li>
+        <li class="viewpoint"><h3>PerceptUI</h3><a href="https://arxiv.org/abs/2606.05697">https://arxiv.org/abs/2606.05697</a> · <time datetime="2026-06-05">June 5, 2026</time> · Persona-conditioned models may improve UI/UX response prediction, suggesting model-based probes could become more context-aware.</li>
+        <li class="viewpoint"><h3>Reasoning for Mobile User Experience with Multimodal LLMs</h3><a href="https://arxiv.org/abs/2606.13192">https://arxiv.org/abs/2606.13192</a> · <time datetime="2026-06-12">June 12, 2026</time> · Multimodal UI reasoning benchmarks can help test whether models understand layout, hierarchy, and usability-relevant interface structure.</li>
+        <li class="viewpoint"><h3>Generative Agents: Interactive Simulacra of Human Behavior</h3><a href="https://arxiv.org/abs/2304.03442">https://arxiv.org/abs/2304.03442</a> · <time datetime="2023-04-07">April 7, 2023</time> · LLM-based agents can simulate believable behavior in constrained environments, creating a foundation for later human-behavior modeling work.</li>
+      </ul>
     </section>
 
   </main>
@@ -1021,7 +926,7 @@
       });
     });
 
-    document.querySelectorAll(".entry-links a").forEach((link) => {
+    document.querySelectorAll(".entry-links a, .viewpoints a").forEach((link) => {
       link.target = "_blank";
       link.rel = "noopener noreferrer";
     });
