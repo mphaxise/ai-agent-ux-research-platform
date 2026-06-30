@@ -404,6 +404,54 @@
       font: 700 12px/1.35 ui-sans-serif, system-ui, sans-serif;
     }
 
+    .viewpoints {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .viewpoint {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 252, 244, 0.7);
+      box-shadow: 0 12px 34px rgba(52, 42, 30, 0.08);
+    }
+
+    .viewpoint h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: -0.03em;
+    }
+
+    .viewpoint dl {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 8px 12px;
+      margin: 0;
+    }
+
+    .viewpoint dt {
+      color: var(--muted);
+      font: 800 11px/1.35 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .viewpoint dd {
+      margin: 0;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+
+    .viewpoint a {
+      color: var(--green);
+      overflow-wrap: anywhere;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
     .section-title {
       display: flex;
       justify-content: space-between;
@@ -559,6 +607,7 @@
       .grid,
       .updates,
       .directory,
+      .viewpoints,
       .source-list {
         grid-template-columns: 1fr;
       }
@@ -594,6 +643,7 @@
     <nav class="nav" aria-label="Page sections">
       <a href="#map-title">Landscape</a>
       <a href="#updates-title">Monthly Update</a>
+      <a href="#viewpoints-title">Viewpoints</a>
       <a href="#directory-title">Field Notes</a>
     </nav>
   </header>
@@ -694,6 +744,49 @@
           <time>Open hypothesis</time>
           <h3>Can human behavior modeling help?</h3>
           <p>Human behavior modeling may improve agent-based validation when calibrated against real behavior. The research question is which behaviors are proxy-friendly and where direct user evidence remains necessary. <a href="https://github.com/mphaxise/ai-agent-ux-research-platform/blob/main/docs/human-behavior-modeling-for-agent-ux.md">Read the research note.</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="viewpoints-title">
+      <div class="section-title">
+        <div>
+          <h2 id="viewpoints-title">Viewpoints</h2>
+          <p>A lightweight source log for claims shaping the landscape. Each record stays intentionally small: source title, URL, date, and claim summary.</p>
+        </div>
+      </div>
+      <div class="viewpoints">
+        <article class="viewpoint">
+          <h3>What Would GPT Click</h3>
+          <dl>
+            <dt>URL</dt><dd><a href="https://arxiv.org/abs/2605.18302">https://arxiv.org/abs/2605.18302</a></dd>
+            <dt>Date</dt><dd>May 19, 2026</dd>
+            <dt>Claim</dt><dd>GPT-predicted first-click behavior can diverge from real user click distributions, making calibration important for synthetic participant claims.</dd>
+          </dl>
+        </article>
+        <article class="viewpoint">
+          <h3>PerceptUI</h3>
+          <dl>
+            <dt>URL</dt><dd><a href="https://arxiv.org/abs/2606.05697">https://arxiv.org/abs/2606.05697</a></dd>
+            <dt>Date</dt><dd>June 5, 2026</dd>
+            <dt>Claim</dt><dd>Persona-conditioned models may improve UI/UX response prediction, suggesting model-based probes could become more context-aware.</dd>
+          </dl>
+        </article>
+        <article class="viewpoint">
+          <h3>Reasoning for Mobile User Experience with Multimodal LLMs</h3>
+          <dl>
+            <dt>URL</dt><dd><a href="https://arxiv.org/abs/2606.13192">https://arxiv.org/abs/2606.13192</a></dd>
+            <dt>Date</dt><dd>June 12, 2026</dd>
+            <dt>Claim</dt><dd>Multimodal UI reasoning benchmarks can help test whether models understand layout, hierarchy, and usability-relevant interface structure.</dd>
+          </dl>
+        </article>
+        <article class="viewpoint">
+          <h3>Generative Agents: Interactive Simulacra of Human Behavior</h3>
+          <dl>
+            <dt>URL</dt><dd><a href="https://arxiv.org/abs/2304.03442">https://arxiv.org/abs/2304.03442</a></dd>
+            <dt>Date</dt><dd>April 7, 2023</dd>
+            <dt>Claim</dt><dd>LLM-based agents can simulate believable behavior in constrained environments, creating a foundation for later human-behavior modeling work.</dd>
+          </dl>
         </article>
       </div>
     </section>

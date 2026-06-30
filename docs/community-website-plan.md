@@ -95,14 +95,19 @@ Confidence: `Inference | medium-high`, based on the external scan finding many a
    - Dated update posts, published monthly from weekly research notes
    - What changed, why it matters, confidence level, and sources
 
-4. `Methods`
+4. `Viewpoints`
+   - A lightweight source log for external claims, critiques, and supporting evidence
+   - Public fields: `source title`, `URL`, `date`, and `claim summary`
+   - Avoid adding stance, score, or rebuttal fields on the public website unless clearly labeled elsewhere
+
+5. `Methods`
    - Synthetic users
    - Browser-agent evaluation
    - Human validation
    - UX observability
    - Launch readiness check
 
-5. `Open Questions`
+6. `Open Questions`
    - Calibration boundary
    - Human verification triggers
    - Buyer category: QA, research, product ops, or agent infrastructure
@@ -130,6 +135,17 @@ Source expectations:
 - `Product` dots should link to the product website or official product documentation.
 - `Workflow` dots should link to the internal research note plus 1-2 external articles, docs, or examples that make the workflow credible.
 - `Experimental approach` dots should link to the paper, benchmark, talk, article, or project page that defines the method.
+
+## Viewpoint Source Template
+
+Public viewpoint cards should stay intentionally small:
+
+- `Source title`
+- `URL`
+- `Date`
+- `Claim summary`
+
+The goal is to show the range of external viewpoints without turning the public site into an argument, endorsement, or rebuttal database.
 
 ## Editorial Workflow
 
