@@ -200,6 +200,12 @@
       line-height: 1.45;
     }
 
+    .map-scroll {
+      overflow-x: auto;
+      border-radius: 26px;
+      -webkit-overflow-scrolling: touch;
+    }
+
     .quadrant {
       position: relative;
       min-height: 690px;
@@ -569,6 +575,7 @@
       }
 
       .quadrant {
+        min-width: 980px;
         min-height: 760px;
       }
 
@@ -600,7 +607,7 @@
       </div>
       <aside class="brief">
         <h2>Current Thesis</h2>
-        <p>Builder platforms are absorbing testing, monitoring, feedback, and security loops. The open space is calibrated UX diagnosis: what failed, why it matters, how confident we are, and when human validation is required.</p>
+        <p>Builder platforms are absorbing testing, monitoring, feedback, and security loops. The open space is calibrated UX diagnosis: what failed, why it matters, whether completion was actually high quality, and when human validation is required.</p>
         <p>Tracks products, research methods, papers, benchmarks, and operating workflows that shape how AI-built apps and agentic experiences get validated.</p>
         <div class="chips">
           <span class="chip">Latest research: Jun 26, 2026</span>
@@ -612,7 +619,7 @@
       <div class="map-top">
         <div>
           <h2 id="map-title">Landscape Map</h2>
-          <p>Dots are placed by evidence source and workflow depth. Click a dot to jump to its summary.</p>
+          <p>Dots are placed by evidence source and workflow depth. Click a dot to jump to its summary. On mobile, swipe the map horizontally.</p>
         </div>
         <div class="chips" aria-label="Filter dots by bucket">
           <button class="filter-button active" data-filter="all">All</button>
@@ -622,13 +629,14 @@
         </div>
       </div>
 
+      <div class="map-scroll">
       <div class="quadrant">
         <div class="axis top">UX learning / validation maturity</div>
         <div class="axis bottom">Task execution / capability checks</div>
         <div class="axis left">Autonomous signals</div>
         <div class="axis right">Human trust / handoff maturity</div>
 
-        <div class="quad-label q1"><strong>Synthetic diagnosis</strong>AI users, simulated personas, calibrated model critique.</div>
+        <div class="quad-label q1"><strong>Synthetic probes</strong>Model/persona probes and contested synthetic evidence; useful only with calibration.</div>
         <div class="quad-label q2"><strong>Human-grounded insight</strong>Real participants, expert review, and AI-assisted synthesis.</div>
         <div class="quad-label q3"><strong>Agent execution infra</strong>Browser agents, verifiers, QA loops, monitoring.</div>
         <div class="quad-label q4"><strong>Launch confidence</strong>Review handoffs, readiness checks, trust and risk signals.</div>
@@ -649,6 +657,7 @@
         <a class="dot" style="--x: 67%; --y: 35%;" data-bucket="process" href="#human-review"><span>Human Review Handoff</span></a>
         <a class="dot" style="--x: 70%; --y: 66%;" data-bucket="process" href="#launch-readiness"><span>Launch Readiness</span></a>
         <a class="dot" style="--x: 45%; --y: 58%;" data-bucket="process" href="#observability"><span>Agent UX Observability</span></a>
+      </div>
       </div>
 
       <div class="legend">
@@ -673,13 +682,13 @@
         </article>
         <article class="update">
           <time>June 2026 edition</time>
-          <h3>Synthetic UX evidence splits</h3>
-          <p>PerceptUI strengthens the case for persona-conditioned synthetic UX evaluation, while What Would GPT Click and UXBench highlight behavioral and UI-reasoning gaps.</p>
+          <h3>Synthetic UX remains contested</h3>
+          <p>PerceptUI shows why persona-conditioned probes are tempting, while What Would GPT Click and UXBench show why synthetic behavior should not be treated as user evidence.</p>
         </article>
         <article class="update">
           <time>June 2026 edition</time>
-          <h3>Safe launch becomes part of UX</h3>
-          <p>Vibe-coded app risk is now mainstream enough that trust, privacy, auth, and fragile production behavior should appear in UX validation reports as scoped flags.</p>
+          <h3>Launch readiness includes accessibility and trust</h3>
+          <p>Vibe-coded app risk is now mainstream enough that WCAG, trust, privacy, auth, and fragile production behavior should appear in validation reports as scoped flags.</p>
         </article>
         <article class="update">
           <time>Research question</time>
