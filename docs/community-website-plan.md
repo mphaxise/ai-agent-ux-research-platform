@@ -4,6 +4,43 @@ Working title: `AI Agent UX Research Landscape`
 
 Purpose: a public map of the emerging AI agent UX research landscape. We will research the space weekly, but publish a more considered website update monthly so the site remains useful rather than noisy.
 
+## Two Workstreams
+
+This project now has two related but distinct workstreams. They should not be treated as the same activity.
+
+### 1. Internal Opportunity Research
+
+Goal: find product opportunities, unmet needs, wedge options, buyer pain, and defensible solution directions.
+
+Operating posture:
+
+- It is acceptable to form hypotheses, take strategic positions, and prioritize likely wedges.
+- The work can be opinionated because the purpose is to decide where to build.
+- Evidence should still be labeled clearly as `Evidence-backed`, `Inference`, or `Assumption`.
+- Reddit/community feedback, interviews, papers, product launches, and market changes are inputs into opportunity discovery.
+
+### 2. Public Landscape Website
+
+Goal: maintain a neutral, evolving catalog of products, workflows, papers, benchmarks, and experimental approaches in AI agent UX research.
+
+Operating posture:
+
+- Avoid over-claiming or presenting our preferred wedge as the landscape's conclusion.
+- Treat contested areas, especially synthetic users, as contested.
+- Separate current-state observations from open hypotheses.
+- Document professional skepticism as data, not as a position to defeat.
+- Prioritize clear placement, source links, known strengths, blind spots, and open questions.
+- The site can have a point of view about uncertainty, but should not read like product marketing for our future solution.
+
+## Editorial Guardrails
+
+- `Current state` is preferred over `current thesis` on the public website unless we are explicitly labeling a hypothesis.
+- Avoid saying synthetic users are research participants or substitutes for users.
+- Use language like `synthetic probes`, `model-based signals`, or `simulated evidence` when appropriate.
+- Acknowledge that agents are goal-completion systems and are not representative users.
+- Treat browser QA, task completion, screenshots, evals, and UAT-style flows as emerging infrastructure rather than the same thing as UX validation.
+- Include accessibility/WCAG, trust, privacy, recoverability, and quality of completion as dimensions of launch readiness.
+
 ## Landing Page Concept
 
 The landing page should lead with a four-quadrant landscape map. Each point can represent a `product`, `workflow`, or `experimental approach`.
@@ -18,7 +55,7 @@ Why this works:
 - It separates browser-task execution from actual UX research judgment.
 - It makes synthetic users visible without overstating them as human replacements.
 - It gives native builder tools, research platforms, observability systems, and papers all a place on the same map.
-- It creates a natural opening for our thesis: the most interesting whitespace is calibrated diagnosis that connects agent/browser evidence with human-grounded confidence.
+- It creates space to compare multiple hypotheses without forcing the map into a single conclusion.
 
 ## Three Buckets
 
