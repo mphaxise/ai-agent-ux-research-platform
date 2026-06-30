@@ -607,8 +607,8 @@
       </div>
       <aside class="brief">
         <h2>Current State</h2>
-        <p>Browser QA, task completion, screenshots, evals, and UAT-style flows are becoming part of AI app-building infrastructure. That does not make them the same thing as UX validation.</p>
-        <p>Agents are goal-completion systems. They can catch obvious bugs and heuristic issues, but they are not representative users and should not be treated as substitutes for human evidence.</p>
+        <p>Browser QA, task completion, screenshots, evals, accessibility checks, and UAT-style flows are becoming part of AI app-building infrastructure.</p>
+        <p>Current approaches can surface obvious bugs and heuristic issues. Researchers and product teams are also exploring model-based probes, human behavior modeling, and hybrid human review to understand where automated signals are useful.</p>
         <div class="chips">
           <span class="chip">Updated: Jun 30, 2026</span>
         </div>
@@ -636,7 +636,7 @@
         <div class="axis left">Autonomous signals</div>
         <div class="axis right">Human trust / handoff maturity</div>
 
-        <div class="quad-label q1"><strong>Synthetic probes</strong>Model/persona probes and contested synthetic evidence; useful only with calibration.</div>
+        <div class="quad-label q1"><strong>Model-based probes</strong>Persona, behavior, and UI-reasoning probes being explored as evidence signals.</div>
         <div class="quad-label q2"><strong>Human-grounded insight</strong>Real participants, expert review, and AI-assisted synthesis.</div>
         <div class="quad-label q3"><strong>Agent execution infra</strong>Browser agents, verifiers, QA loops, monitoring.</div>
         <div class="quad-label q4"><strong>Launch confidence</strong>Review handoffs, readiness checks, trust and risk signals.</div>
@@ -682,18 +682,18 @@
         </article>
         <article class="update">
           <time>Current state</time>
-          <h3>Synthetic UX remains contested</h3>
-          <p>Professional researchers are skeptical of synthetic users for valid reasons. Model-based probes may catch obvious issues, but they should not be presented as equivalent to research with actual users.</p>
+          <h3>Model-based probes are being explored</h3>
+          <p>Approaches include persona-conditioned responses, click/path prediction, multimodal UI reasoning, and model-assisted analysis. The open question is which signals predict real user behavior in decision-relevant ways.</p>
         </article>
         <article class="update">
           <time>Open hypothesis</time>
-          <h3>What counts as quality completion?</h3>
-          <p>Task completion may miss confusion, mistrust, poor accessibility, weak recoverability, or the wrong product premise. One open question is how agent-based validation can evaluate completion quality, not just completion.</p>
+          <h3>What can automated validation reliably see?</h3>
+          <p>Task completion, screenshots, and browser traces can reveal some classes of friction. A live research question is how these signals relate to confusion, mistrust, accessibility, recoverability, and product-fit concerns.</p>
         </article>
         <article class="update">
           <time>Open hypothesis</time>
-          <h3>Where should human validation enter the loop?</h3>
-          <p>Different teams are exploring browser QA, human review, accessibility checks, observability, and launch-readiness gates. The open question is which signals should trigger real-user research or expert review.</p>
+          <h3>Can human behavior modeling help?</h3>
+          <p>Human behavior modeling may improve agent-based validation when calibrated against real behavior. The research question is which behaviors are proxy-friendly and where direct user evidence remains necessary. <a href="./human-behavior-modeling-for-agent-ux.md">Read the research note.</a></p>
         </article>
       </div>
     </section>
