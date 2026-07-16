@@ -17,6 +17,10 @@ This is not a finished platform presented as a foregone conclusion. It is a set 
 | **Useful for** | AI product teams, technical founders, designers, and UX researchers working on agentic products where system behavior and human judgment must stay legible to one another. |
 | **Current status** | Active divergence and prototyping, with workflow validation as the lead wedge and agent UX observability as the strongest alternate direction. |
 
+![AI Agent UX Research Landscape showing products, experimental probes, and workflow concepts mapped by evidence source and workflow depth](docs/assets/readme/ai-agent-ux-landscape.png)
+
+*The live landscape maps products, research probes, and workflow concepts by evidence source and validation maturity. [Explore the interactive version.](https://mphaxise.github.io/ai-agent-ux-research-platform/)*
+
 ## Explore the work
 
 - **See the field:** use the [interactive landscape](https://mphaxise.github.io/ai-agent-ux-research-platform/) to scan products, infrastructure, research, and emerging patterns.
