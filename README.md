@@ -1,82 +1,54 @@
 # AI Agent UX Research Platform
 
-**A working research program for understanding how people direct, interpret, review, and recover from the actions of AI agents.**
+**Exploring how UX research and validation fit into AI-assisted build–test–iterate loops—and mapping the products and practices emerging around them.**
 
-An agent can complete a task successfully and still leave a person confused, overconfident, unable to intervene, or unsure what evidence supports the result. I started this project to investigate that gap between technical evaluation and the lived product experience.
+AI agents are shortening the distance between an idea, a coded interface, and the next revision. Designers are working more directly in code, and validation can now happen inside the build loop instead of waiting until a product feels “ready.” This repository is where I study what that changes about UX research.
 
-This is not a finished platform presented as a foregone conclusion. It is a set of research artifacts, market maps, product theses, and small design probes that make the problem more concrete before the architecture hardens.
+The work has two parts.
 
-**[Explore the live AI Agent UX Research Landscape →](https://mphaxise.github.io/ai-agent-ux-research-platform/)**
+## 1. Study the changing validation loop
 
-## At a glance
+I am looking at how teams can bring UX evidence into increasingly fast, code-centered product cycles:
 
-| | |
-| --- | --- |
-| **Problem** | Technical success metrics do not tell us whether people understand an agent, can correct it, or know when to trust its output. |
-| **What is here** | A live landscape, market and problem-space research, competing product wedges, validation plans, and emerging interaction principles. |
-| **Useful for** | AI product teams, technical founders, designers, and UX researchers working on agentic products where system behavior and human judgment must stay legible to one another. |
-| **Current status** | Active divergence and prototyping, with workflow validation as the lead wedge and agent UX observability as the strongest alternate direction. |
+```mermaid
+flowchart LR
+    A["Question"] --> B["Build in code"]
+    B --> C["Automated checks"]
+    C --> D["UX evidence"]
+    D --> E["Designer or researcher judgment"]
+    E --> F["Revise in code"]
+    F --> C
+```
 
-![AI Agent UX Research Landscape showing products, experimental probes, and workflow concepts mapped by evidence source and workflow depth](docs/assets/readme/ai-agent-ux-landscape.png)
+The practical questions are:
 
-*The live landscape maps products, research probes, and workflow concepts by evidence source and validation maturity. [Explore the interactive version.](https://mphaxise.github.io/ai-agent-ux-research-platform/)*
+- What can browser checks, model-based probes, and workflow telemetry tell us?
+- Where do direct user evidence and experienced design judgment remain necessary?
+- How should findings return to a coding agent or designer in a form they can act on?
+- How do teams rerun validation without turning every iteration into a full research study?
 
-## Explore the work
+## 2. Map the emerging landscape
 
-- **See the field:** use the [interactive landscape](https://mphaxise.github.io/ai-agent-ux-research-platform/) to scan products, infrastructure, research, and emerging patterns.
-- **Follow the reasoning:** read [what we have done so far](docs/what-weve-done-so-far.md), including the ideas we narrowed, reframed, or kept open.
-- **Inspect the product options:** compare the [wedge analysis](docs/wedge-options.md) and [problem-space taxonomy](docs/problem-space-taxonomy.md).
-- **Look at the two strongest directions:** read the [workflow-validation thesis](docs/workflow-validation-thesis.md) and [agent UX observability](docs/agent-ux-observability.md).
-- **See what I would test next:** open the [next validation sprint](docs/next-validation-sprint.md).
+As I study those loops, I am tracking the products, processes, papers, and experiments taking shape around them. The visual map places them on two dimensions:
 
-## Why I am working on this
+- **Horizontal:** autonomous signals → human trust and handoff maturity
+- **Vertical:** task execution and capability checks → UX learning and validation maturity
 
-My background is in UX research, product design, and design leadership for complex expert workflows. Agentic products make many familiar design questions more consequential: what the system believes, what it is about to do, what evidence it used, whether an action is reversible, and when a person needs to step in.
+**[Open the interactive landscape →](https://mphaxise.github.io/ai-agent-ux-research-platform/)**
 
-I am using this repository to connect those questions to working product strategy. The aim is not to argue that synthetic evaluation replaces direct research. It is to find the places where agent-assisted diagnosis, observability, and pre-ship validation can create real value—and to define the calibration boundaries honestly.
+![Two-by-two AI Agent UX Research Landscape mapping products, experimental probes, and workflow concepts by evidence source and validation maturity](docs/assets/readme/ai-agent-ux-landscape.png)
 
-## Product questions
+*The map is a working view of a fast-changing field, not a claim that the categories are settled.*
 
-- How should teams evaluate whether an agentic product is usable, not only functional?
-- What information helps a person understand what an agent knows, assumes, proposes, and has already done?
-- When should an agent proceed, ask for confirmation, hand off, or stop?
-- How can teams inspect an agent’s trajectory without overwhelming users with implementation detail?
-- Where can synthetic evaluation help, and where is direct human research still essential?
-- How should confidence, provenance, uncertainty, and reversibility appear in the product experience?
+## Start here
 
-## Current exploration areas
+- [Interactive landscape](https://mphaxise.github.io/ai-agent-ux-research-platform/) — the current two-by-two map, field notes, and source links
+- [Workflow validation thesis](docs/workflow-validation-thesis.md) — one proposed build–validate–revise loop in detail
+- [Human behavior modeling for agent UX](docs/human-behavior-modeling-for-agent-ux.md) — where model-based signals may help and where they remain weak
+- [What we have done so far](docs/what-weve-done-so-far.md) — the research path, changes in direction, and current open questions
 
-### Agent-experience observability
+## Working stance
 
-Experiments in turning traces, actions, tool calls, and decision points into views that support product diagnosis and human understanding.
+Automated and model-based signals can make some forms of UX validation faster, but they are not substitutes for people. The useful question is what each signal can detect reliably, how confident we should be in it, and when the loop should route to a designer, researcher, or participant.
 
-### Evidence calibration
-
-Ways to distinguish observed evidence, model inference, evaluator judgment, and unresolved uncertainty so that outputs do not appear more certain than they are.
-
-### Human-review boundaries
-
-Patterns for deciding when an agent may act independently and when meaningful human interpretation, approval, or correction is required.
-
-### UX validation for agentic workflows
-
-Research methods and design probes for evaluating comprehension, control, recovery, trust calibration, and handoff across multi-step agent experiences.
-
-## Design principles
-
-- Evaluate the user’s understanding and control, not only task completion.
-- Make assumptions, proposed actions, and irreversible consequences visible.
-- Preserve access to evidence without forcing every user to inspect raw traces.
-- Design for correction, recovery, override, and graceful stopping.
-- Separate measured behavior from interpretation and recommendation.
-- Use small working experiments to clarify the product before scaling the architecture.
-
-## Status
-
-This is an active research-and-prototyping repository. The questions, product wedges, and architecture will continue to evolve as individual probes are implemented and evaluated. That evolution is part of the work: important changes in direction are documented rather than edited out of the story.
-
-Related work:
-
-- [Design Skill Pack for AI Agent Coding Platforms](https://github.com/mphaxise/design-skill-pack-for-ai-agent-coding-platforms)
-- [Awesome Agent UX Research](https://github.com/mphaxise/awesome-agent-ux-research)
-- [GStack Port for Codex](https://github.com/mphaxise/gstack-port-for-codex)
+Related work: [Design Skill Pack for AI Agent Coding Platforms](https://github.com/mphaxise/design-skill-pack-for-ai-agent-coding-platforms) · [Awesome Agent UX Research](https://github.com/mphaxise/awesome-agent-ux-research)
