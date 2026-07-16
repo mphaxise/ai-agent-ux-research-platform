@@ -1,10 +1,35 @@
 # AI Agent UX Research Platform
 
-**Research and design probes for evaluating how people understand, direct, review, and collaborate with AI agents.**
+**A working research program for understanding how people direct, interpret, review, and recover from the actions of AI agents.**
 
-This project explores a gap between technical agent evaluation and real product experience: an agent can complete a task successfully while still leaving users confused, overconfident, unable to intervene, or unsure what evidence supports the result.
+An agent can complete a task successfully and still leave a person confused, overconfident, unable to intervene, or unsure what evidence supports the result. I started this project to investigate that gap between technical evaluation and the lived product experience.
 
-The platform is being developed as a set of small, testable experiments around agent UX validation, observability, evidence calibration, and human-review boundaries.
+This is not a finished platform presented as a foregone conclusion. It is a set of research artifacts, market maps, product theses, and small design probes that make the problem more concrete before the architecture hardens.
+
+**[Explore the live AI Agent UX Research Landscape →](https://mphaxise.github.io/ai-agent-ux-research-platform/)**
+
+## At a glance
+
+| | |
+| --- | --- |
+| **Problem** | Technical success metrics do not tell us whether people understand an agent, can correct it, or know when to trust its output. |
+| **What is here** | A live landscape, market and problem-space research, competing product wedges, validation plans, and emerging interaction principles. |
+| **Useful for** | AI product teams, technical founders, designers, and UX researchers working on agentic products where system behavior and human judgment must stay legible to one another. |
+| **Current status** | Active divergence and prototyping, with workflow validation as the lead wedge and agent UX observability as the strongest alternate direction. |
+
+## Explore the work
+
+- **See the field:** use the [interactive landscape](https://mphaxise.github.io/ai-agent-ux-research-platform/) to scan products, infrastructure, research, and emerging patterns.
+- **Follow the reasoning:** read [what we have done so far](docs/what-weve-done-so-far.md), including the ideas we narrowed, reframed, or kept open.
+- **Inspect the product options:** compare the [wedge analysis](docs/wedge-options.md) and [problem-space taxonomy](docs/problem-space-taxonomy.md).
+- **Look at the two strongest directions:** read the [workflow-validation thesis](docs/workflow-validation-thesis.md) and [agent UX observability](docs/agent-ux-observability.md).
+- **See what I would test next:** open the [next validation sprint](docs/next-validation-sprint.md).
+
+## Why I am working on this
+
+My background is in UX research, product design, and design leadership for complex expert workflows. Agentic products make many familiar design questions more consequential: what the system believes, what it is about to do, what evidence it used, whether an action is reversible, and when a person needs to step in.
+
+I am using this repository to connect those questions to working product strategy. The aim is not to argue that synthetic evaluation replaces direct research. It is to find the places where agent-assisted diagnosis, observability, and pre-ship validation can create real value—and to define the calibration boundaries honestly.
 
 ## Product questions
 
@@ -42,13 +67,9 @@ Research methods and design probes for evaluating comprehension, control, recove
 - Separate measured behavior from interpretation and recommendation.
 - Use small working experiments to clarify the product before scaling the architecture.
 
-## Intended audience
-
-This work is for product designers, UX researchers, AI product teams, developer-tool builders, and technical founders working on agentic products where user judgment and system behavior must remain legible to one another.
-
 ## Status
 
-This is an active research-and-prototyping repository. The architecture and experiments will evolve as individual probes are implemented and evaluated.
+This is an active research-and-prototyping repository. The questions, product wedges, and architecture will continue to evolve as individual probes are implemented and evaluated. That evolution is part of the work: important changes in direction are documented rather than edited out of the story.
 
 Related work:
 
